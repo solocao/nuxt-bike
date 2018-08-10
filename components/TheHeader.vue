@@ -148,7 +148,7 @@
   </div>
 </template>
 <script>
-import ShopCart from './ShopCart.vue'
+import NavSwiper from './NavSwiper.vue'
 import ShopHeader from './ShopHeader.vue'
 import UserHoverCard from './UserHoverCard.vue'
 export default {
@@ -159,7 +159,7 @@ export default {
     }
   },
   components: {
-    ShopCart,
+    NavSwiper,
     ShopHeader,
     UserHoverCard
   },
@@ -263,5 +263,9 @@ export default {
 .fade-enter, .fade-leave-to { /* .fade-leave-active below version 2.1.8 */
   transform: translateX(5px);
   opacity: 1;
+}
+
+#header {
+  margin-bottom: 20px;
 }
 </style>

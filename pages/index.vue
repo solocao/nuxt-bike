@@ -1,27 +1,34 @@
 <template>
-  <main class="capsule" style="background:red">
-    <mast-head/>
-    <div class="contain">
-      <side-bar :pricerange.sync="highprice" />
-      <transition-group name="items" tag="section" class="content">
-        <shop-item v-for="(item) in products" :item="item" :key="item.id">
-        </shop-item>
-      </transition-group>
-    </div>
-  </main>
+  <div>
+    <nav-swiper></nav-swiper>
+    <main class="capsule">
+      <div class="contain">
+        <side-bar :pricerange.sync="highprice" />
+        <transition-group name="items" tag="section" class="content">
+          <shop-item v-for="(item) in products" :item="item" :key="item.id">
+          </shop-item>
+        </transition-group>
+      </div>
+    </main>
+  </div>
+
 </template>
 
 <script>
 import SideBar from '../components/SideBar.vue';
 import MastHead from '../components/MastHead.vue';
 import ShopItem from '../components/ShopItem.vue';
+import NavSwiper from '../components/NavSwiper.vue';
+
+
 
 export default {
   layout: 'shop',
   components: {
     SideBar,
     MastHead,
-    ShopItem
+    ShopItem,
+    NavSwiper
   },
   data() {
     return {

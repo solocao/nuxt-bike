@@ -3,10 +3,7 @@
     <div v-swiper:mySwiper="swiperOption" v-if="banners.length>0">
       <div class="swiper-wrapper">
         <div class="swiper-slide item" v-for="(banner,index) in banners" :key="index">
-          <img :src="banner.url">
-          <nuxt-link :to="`/article/${banner._id}`" class="s-title">
-            <span>{{banner.title}}</span>
-          </nuxt-link>
+          <img :src="banner">
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-bullets"></div>
@@ -19,7 +16,9 @@ export default {
   data() {
     return {
       banners: [
-
+        'https://www.aimatech.com/r/front/images/index/201805292.jpg',
+        'https://www.aimatech.com/r/front/images/index/201805294.jpg',
+        'https://www.aimatech.com/r/front/images/index/20180704.jpg'
       ],
       swiperOption: {
         loop: true,
@@ -56,7 +55,7 @@ export default {
     }
   },
   mounted() {
-    this.swiperList()
+    // this.swiperList()
     // this.mySwiper.slideTo(1)
   }
 }
@@ -65,7 +64,7 @@ export default {
 
 <style lang="stylus" scoped>
 .my-swiper {
-  height: 360px;
+  height: 560px;
   width: 100%;
 
   .swiper-wrapper {
@@ -74,7 +73,7 @@ export default {
 
     img {
       width: 100%;
-      height: 360px;
+      height: 560px;
     }
   }
 
