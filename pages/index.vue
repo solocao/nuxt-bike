@@ -6,6 +6,10 @@
       <div class="row product-content">
         <product-item v-for="i in 8" :key="i"></product-item>
       </div>
+      <div>
+        <home-banner></home-banner>
+      </div>
+      <the-partner></the-partner>
     </main>
   </div>
 </template>
@@ -16,7 +20,8 @@ import MastHead from '../components/MastHead.vue';
 import ShopItem from '../components/ShopItem.vue';
 import NavSwiper from '../components/NavSwiper.vue';
 import ProductItem from '../components/ProductItem.vue';
-
+import HomeBanner from '../components/HomeBanner.vue';
+import ThePartner from '../components/ThePartner.vue';
 
 
 export default {
@@ -26,7 +31,9 @@ export default {
     MastHead,
     ShopItem,
     NavSwiper,
-    ProductItem
+    ProductItem,
+    HomeBanner,
+    ThePartner
   },
   data() {
     return {
