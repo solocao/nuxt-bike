@@ -2,16 +2,12 @@
   <div>
     <nav-swiper></nav-swiper>
     <main class="capsule">
-      <div class="contain">
-        <side-bar :pricerange.sync="highprice" />
-        <transition-group name="items" tag="section" class="content">
-          <shop-item v-for="(item) in products" :item="item" :key="item.id">
-          </shop-item>
-        </transition-group>
+      New Product
+      <div class="row product-content">
+        <product-item v-for="i in 8" :key="i"></product-item>
       </div>
     </main>
   </div>
-
 </template>
 
 <script>
@@ -19,6 +15,7 @@ import SideBar from '../components/SideBar.vue';
 import MastHead from '../components/MastHead.vue';
 import ShopItem from '../components/ShopItem.vue';
 import NavSwiper from '../components/NavSwiper.vue';
+import ProductItem from '../components/ProductItem.vue';
 
 
 
@@ -28,7 +25,8 @@ export default {
     SideBar,
     MastHead,
     ShopItem,
-    NavSwiper
+    NavSwiper,
+    ProductItem
   },
   data() {
     return {
@@ -71,21 +69,21 @@ export default {
 };
 </script>
 
-<style>
-/* no grid support */
-aside {
-  float: left;
-  width: 19.1489%;
-}
+ <style lang="stylus">
+ /* no grid support */
+ aside {
+   float: left;
+   width: 19.1489%;
+ }
 
-.content {
-  /*no grid support*/
-  float: right;
-  width: 79.7872%;
-  /* grid */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 0 !important;
-}
+ .content {
+   /* no grid support */
+   float: right;
+   width: 79.7872%;
+   /* grid */
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 10px;
+   padding: 0 !important;
+ }
 </style>
