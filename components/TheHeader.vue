@@ -1,13 +1,149 @@
 <template>
-  <div>
-    <div class="top_menus">
-
+  <div id="header">
+    <div class="row m0 top_menus">
+      <div class="container">
+        <div class="row">
+          <ul class="nav nav-pills fleft">
+            <li>
+              <a href="index.html">home</a>
+            </li>
+            <li>
+              <a href="about.html">about</a>
+            </li>
+            <li>
+              <a href="contact.html">contact us</a>
+            </li>
+          </ul>
+          <ul class="nav nav-pills fright">
+            <li>
+              <a href="cart.html">cart</a>
+            </li>
+            <li>
+              <a href="#">track order</a>
+            </li>
+            <li>
+              <a href="#">my account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="logo_line">
-
+    <div class="row m0 logo_line">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5">
+            <a href="index.html" class="logo_a"><img src="images/logo.png" alt="Furniture House"></a>
+          </div>
+          <div class="col-sm-7 searchSec">
+            <div class="fleft searchForm">
+              <form action="#" method="get">
+                <div class="input-group">
+                  <input type="hidden" name="search_param" value="all" id="search_param">
+                  <input type="search" class="form-control" placeholder="Search Products">
+                  <div class="input-group-btn searchFilters">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <span id="searchFilterValue">All Categories</span>
+                      <i class="fa fa-angle-down"></i>
+                    </button>
+                  </div>
+                  <!-- /btn-group -->
+                  <span class="input-group-btn searchIco">
+                    <button class="btn btn-default" type="submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </span>
+                </div>
+                <!-- /input-group -->
+              </form>
+            </div>
+            <div class="fleft wishlistCompare">
+              <ul class="nav">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-heart"></i> Wishlist (3)</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-exchange"></i> Compare (2)</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fleft cartCount">
+              <div class="cartCountInner row m0">
+                <span class="badge">2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container">
+    <nav class="navbar navbar-default m0 navbar-static-top">
+      <div class="container-fluid container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+            <i class="fa fa-bars"></i> Navigation
+          </button>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="nav navbar-nav a-nav">
+            <li class="active dropdown">
+              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages</a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="services.html">Services</a>
+                </li>
+                <li>
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                  <a href="single-post.html">Single Post</a>
+                </li>
+                <li>
+                  <a href="shortcodes.html">Shortcodes</a>
+                </li>
+                <li>
+                  <a href="404.html">404</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown megaMenu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mega Menu</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Product</a>
+            </li>
+            <li>
+              <a href="#">Living Rooms</a>
+            </li>
+            <li>
+              <a href="#">solidwood</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="row topFeatures m0">
+      <div class="container">
+        <ul class="nav nav-justified text-center">
+          <li><img src="~assets/img/icons/returns.png" alt="">30-days returns</li>
+          <li><img src="~assets/img/icons/delivery-car.png" alt="">fast delivery</li>
+          <li><img src="~assets/img/icons/tel24-7.png" alt="">24/7 customer support</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

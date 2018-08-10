@@ -1,5 +1,5 @@
 <template>
-  <div style="background:#F1F2F4">
+  <div>
     <the-header></the-header>
     <nuxt/>
   </div>

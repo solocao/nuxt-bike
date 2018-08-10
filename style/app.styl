@@ -1,9 +1,49 @@
-body {
-  background: red !important;
+@import 'header.styl'
+@import 'important.styl'
+// 移植
+// @media (min-width: 1200px){
+//   .container {
+//     width: 1170px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .container {
+//     width: 970px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+// .container {
+//     width: 750px;
+//   }
+// }
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
 }
 
-.top_menus {
-  height :300px;
-  width: 100%;
-  background: red;
+/*Floating*/
+.fleft {
+  float: left;
 }
+.fright {
+  float: right;
+}
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  li {
+    float: left;
+  }
+}
+
+
+
+
