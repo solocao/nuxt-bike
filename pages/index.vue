@@ -6,7 +6,7 @@
       <div class="row product-content">
         <product-item v-for="i in 8" :key="i"></product-item>
       </div>
-      <div>
+      <div style="margin-top:30px">
         <home-banner></home-banner>
       </div>
       <the-partner></the-partner>
@@ -22,7 +22,7 @@ import NavSwiper from '../components/NavSwiper.vue';
 import ProductItem from '../components/ProductItem.vue';
 import HomeBanner from '../components/HomeBanner.vue';
 import ThePartner from '../components/ThePartner.vue';
-
+import TheFooter from '../components/TheFooter.vue';
 
 export default {
   layout: 'shop',
@@ -33,7 +33,8 @@ export default {
     NavSwiper,
     ProductItem,
     HomeBanner,
-    ThePartner
+    ThePartner,
+    TheFooter
   },
   data() {
     return {
