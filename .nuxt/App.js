@@ -7,6 +7,8 @@ import '../style/app.styl'
 
 import '../assets/css/bootstrap.min.css'
 
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+
 import '../node_modules/swiper/dist/css/swiper.css'
 
 

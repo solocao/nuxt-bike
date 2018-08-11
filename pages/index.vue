@@ -2,13 +2,35 @@
   <div>
     <nav-swiper></nav-swiper>
     <main class="capsule">
-      New Product
+      <div class="row sectionTitle">
+        <h3> 品牌电动车</h3>
+        <h5>热门电单车</h5>
+      </div>
+
       <div class="row product-content">
         <product-item v-for="i in 8" :key="i"></product-item>
       </div>
       <div style="margin-top:30px">
         <home-banner></home-banner>
       </div>
+      <div class="row sectionTitle">
+        <h3> 热门活动</h3>
+        <h5>热门电单车</h5>
+      </div>
+      <div>
+        <active-item v-for="i in 4" :key="i"></active-item>
+      </div>
+
+      <div class="row sectionTitle">
+        <h3>新闻资讯</h3>
+        <h5>电单车行业新闻</h5>
+      </div>
+      <div class="row" style="margin-top:35px">
+        <Col span="16">
+        <post-large v-for="i in 8" :key="i"></post-large>
+        </Col>
+      </div>
+      <!-- 合作伙伴 -->
       <the-partner></the-partner>
     </main>
   </div>
@@ -20,9 +42,11 @@ import MastHead from '../components/MastHead.vue';
 import ShopItem from '../components/ShopItem.vue';
 import NavSwiper from '../components/NavSwiper.vue';
 import ProductItem from '../components/ProductItem.vue';
+import ActiveItem from '../components/ActiveItem.vue';
 import HomeBanner from '../components/HomeBanner.vue';
 import ThePartner from '../components/ThePartner.vue';
 import TheFooter from '../components/TheFooter.vue';
+import PostLarge from '../components/PostLarge.vue';
 
 export default {
   layout: 'shop',
@@ -34,7 +58,9 @@ export default {
     ProductItem,
     HomeBanner,
     ThePartner,
-    TheFooter
+    TheFooter,
+    ActiveItem,
+    PostLarge
   },
   data() {
     return {

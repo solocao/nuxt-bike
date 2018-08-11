@@ -104,14 +104,14 @@ export default {
     ins {
       font-size: 18px;
       line-height: 40px;
-      font-weight: 500;
-      color: #f63440;
+      font-weight: 600;
+      color: #33AC41;
       text-decoration: none;
     }
   }
 
   .add-to-cart {
-    background: #f63440;
+    background: #33AC41;
     position: absolute;
     top: 100%;
     left: 0px;

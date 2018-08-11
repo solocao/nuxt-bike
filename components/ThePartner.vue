@@ -29,29 +29,6 @@
 </template>
 <style lang="stylus">
 .partner {
-  .sectionTitle {
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 45px;
-  }
-
-  .sectionTitle h3 {
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .sectionTitle h3:after {
-    height: 1px;
-    width: 65px;
-    content: '';
-    background: #222222;
-    margin: 15px auto;
-    display: block;
-  }
-
-  .sectionTitle h5 {
-    font-family: 'Montserrat', sans-serif;
-  }
-
   .brands {
     ul {
       float: none;
