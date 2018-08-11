@@ -60,7 +60,7 @@
               <ul class="nav">
                 <li>
                   <a href="#">
-                    <i class="fa fa-heart"></i> Wishlist (3)</a>
+                    <i class="fa fa-heart"></i> 心愿单 (3)</a>
                 </li>
                 <li>
                   <a href="#">
@@ -90,45 +90,31 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="nav navbar-nav a-nav">
             <li class="active dropdown">
-              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
+              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="about.html">电单车</a>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages</a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a href="services.html">Services</a>
-                </li>
-                <li>
-                  <a href="blog.html">Blog</a>
-                </li>
-                <li>
-                  <a href="single-post.html">Single Post</a>
-                </li>
-                <li>
-                  <a href="shortcodes.html">Shortcodes</a>
-                </li>
-                <li>
-                  <a href="404.html">404</a>
-                </li>
-              </ul>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
             </li>
             <li class="dropdown megaMenu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mega Menu</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">活动</a>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Product</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">优惠券</a>
             </li>
             <li>
-              <a href="#">Living Rooms</a>
+              <a href="#">配件</a>
             </li>
             <li>
-              <a href="#">solidwood</a>
+              <a href="#">视频</a>
             </li>
             <li>
-              <a href="contact.html">Contact Us</a>
+              <a href="contact.html">联系我们</a>
             </li>
           </ul>
         </div>
@@ -139,9 +125,9 @@
     <div class="row topFeatures m0">
       <div class="container">
         <ul class="nav nav-justified text-center">
-          <li><img src="~assets/img/icons/returns.png" alt="">30-days returns</li>
-          <li><img src="~assets/img/icons/delivery-car.png" alt="">fast delivery</li>
-          <li><img src="~assets/img/icons/tel24-7.png" alt="">24/7 customer support</li>
+          <li><img src="~assets/img/icons/returns.png" alt="">30天退换</li>
+          <li><img src="~assets/img/icons/delivery-car.png" alt="">便捷物流</li>
+          <li><img src="~assets/img/icons/tel24-7.png" alt="">客服支持</li>
         </ul>
       </div>
     </div>
@@ -173,6 +159,11 @@ export default {
 
 <style lang="stylus">
 @import '../style/var.styl';
+
+.navbar-nav {
+  font-size: 14px;
+  font-weight: bold;
+}
 
 .navarea-shop {
   height: 120px;

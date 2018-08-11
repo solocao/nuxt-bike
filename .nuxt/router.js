@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _2bf37c15 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
+const _4956efbf = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
 const _b09b25e4 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
@@ -68,6 +69,11 @@ export function createRouter () {
 			path: "/shop/:id?",
 			component: _2bf37c15,
 			name: "shop-id"
+		},
+		{
+			path: "/post/:id?",
+			component: _4956efbf,
+			name: "post-id"
 		},
 		{
 			path: "/",

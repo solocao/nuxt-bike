@@ -112,12 +112,6 @@
   height: 190px;
 }
 
-.service-wrap:hover .service-img img {
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-}
-
 .service-img ul {
   position: absolute;
   left: 20px;
