@@ -3780,7 +3780,7 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/methods/download/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-micromatch@^3.1.4:
+micromatch@^3.1.10, micromatch@^3.1.4:
   version "3.1.10"
   resolved "http://registry.npm.taobao.org/micromatch/download/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
   dependencies:
