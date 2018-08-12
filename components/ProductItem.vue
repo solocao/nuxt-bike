@@ -59,6 +59,24 @@ export default {
       visibility: visible;
       transform: translate(0px, -10px);
     }
+
+    .like {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .like {
+    font-size: 18px;
+    line-height: 35px;
+    position: absolute;
+    top: 27px;
+    right: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translate(30px, 0px);
   }
 
   .product-thumb {

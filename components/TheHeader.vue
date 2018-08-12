@@ -5,21 +5,21 @@
         <div class="row">
           <ul class="nav nav-pills fleft">
             <li>
-              <a href="index.html">home</a>
+              <a href="index.html">首页</a>
             </li>
             <li>
-              <a href="about.html">about</a>
+              <a href="about.html">关于我们</a>
             </li>
             <li>
-              <a href="contact.html">contact us</a>
+              <a href="contact.html">联系我们</a>
             </li>
           </ul>
           <ul class="nav nav-pills fright">
             <li>
-              <a href="cart.html">cart</a>
+              <a href="cart.html">购物车</a>
             </li>
             <li>
-              <a href="#">track order</a>
+              <a href="#">订单</a>
             </li>
             <li>
               <a href="./user">个人中心</a>
@@ -32,17 +32,17 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-5">
-            <a href="index.html" class="logo_a"><img src="images/logo.png" alt="Furniture House"></a>
+            <span class="site-title">AA 电单车</span>
           </div>
           <div class="col-sm-7 searchSec">
             <div class="fleft searchForm">
               <form action="#" method="get">
                 <div class="input-group">
                   <input type="hidden" name="search_param" value="all" id="search_param">
-                  <input type="search" class="form-control" placeholder="Search Products">
+                  <input type="search" class="form-control" placeholder="查找">
                   <div class="input-group-btn searchFilters">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                      <span id="searchFilterValue">All Categories</span>
+                      <span id="searchFilterValue">所有分类</span>
                       <i class="fa fa-angle-down"></i>
                     </button>
                   </div>
@@ -77,51 +77,55 @@
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-default m0 navbar-static-top">
-      <div class="container-fluid container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
-            <i class="fa fa-bars"></i> Navigation
-          </button>
-        </div>
+    <Affix>
+      <nav class="navbar navbar-default m0 navbar-static-top">
+        <div class="container-fluid container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+              <i class="fa fa-bars"></i> Navigation
+            </button>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="nav navbar-nav a-nav">
-            <li class="active dropdown">
-              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
-            </li>
-            <li>
-              <a href="about.html">电单车</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
-            </li>
-            <li class="dropdown megaMenu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">活动</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">优惠券</a>
-            </li>
-            <li>
-              <a href="#">配件</a>
-            </li>
-            <li>
-              <a href="#">视频</a>
-            </li>
-            <li>
-              <a href="contact.html">联系我们</a>
-            </li>
-          </ul>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="nav navbar-nav a-nav">
+              <li class="active dropdown">
+                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
+              </li>
+              <li>
+                <a href="about.html">电单车</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
+              </li>
+              <li class="dropdown megaMenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">活动</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">优惠券</a>
+              </li>
+              <li>
+                <a href="#">配件</a>
+              </li>
+              <li>
+                <a href="#">视频</a>
+              </li>
+              <li>
+                <a href="contact.html">联系我们</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
+        <!-- /.container-fluid -->
+      </nav>
+    </Affix>
     <div class="row topFeatures m0">
       <div class="container">
         <ul class="nav nav-justified text-center">
@@ -159,6 +163,14 @@ export default {
 
 <style lang="stylus">
 @import '../style/var.styl';
+
+.site-title {
+  font-size: 36px;
+  color: #33AC41;
+  font-weight: bold;
+  top: 10px;
+  position: absolute;
+}
 
 .navbar-nav {
   font-size: 14px;
