@@ -2,7 +2,7 @@
   <div class="partner contentRowPad">
     <div class="container">
       <div class="row sectionTitle">
-        <h3>our brands</h3>
+        <h3>合作品牌</h3>
         <h5>choose best with our favorite brands</h5>
       </div>
       <div class="row brands">

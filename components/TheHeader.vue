@@ -64,7 +64,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-exchange"></i> Compare (2)</a>
+                    <i class="fa fa-exchange"></i> 大家喜欢 (2)</a>
                 </li>
               </ul>
             </div>

@@ -2,18 +2,18 @@
   <div class="product-item">
     <div class="product-thumb clearfix">
       <a href="#" class="product-thumb">
-        <img src="~assets/img/shop/15.jpg" alt="image">
+        <img :src="product.img_list[0].url" alt="image">
       </a>
-      <span class="new sale">Sale</span>
+      <span class="tag new sale">在售</span>
     </div>
     <div class="product-info clearfix">
-      <span class="product-title">Cotton White Underweaer Block Out Edition</span>
+      <span class="product-title">{{product.name}}</span>
       <div class="price">
         <del>
           <span class="regular">$150.00</span>
         </del>
         <ins>
-          <span class="amount">$100.00</span>
+          <span class="amount">{{product.sale_price}} </span>
         </ins>
       </div>
     </div>
@@ -27,6 +27,16 @@
 </template>
 <script>
 export default {
+  props: {
+    product: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+
+    }
+  }
 
 }
 </script>
@@ -67,6 +77,11 @@ export default {
     }
   }
 
+  .tag {
+    width: 60px;
+    height: 26px;
+  }
+
   .like {
     font-size: 18px;
     line-height: 35px;
@@ -81,12 +96,16 @@ export default {
 
   .product-thumb {
     padding: 20px 0px 0px 0px;
+
+    img {
+      width: 230px;
+      height: 200px;
+    }
   }
 
   .new {
-    font-size: 18px;
-    line-height: 35px;
-    width: 87px;
+    font-size: 14px;
+    line-height: 26px;
     text-align: center;
     background-color: #7cc576;
     color: #ffffff;
@@ -97,7 +116,7 @@ export default {
   }
 
   .sale {
-    background-color: #f63440;
+    background-color: #7cc576;
   }
 
   .product-title {
