@@ -3,9 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const _0d238d02 = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
 const _52699fce = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
-const _4956efbf = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
 const _2bf37c15 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
+const _4956efbf = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
 const _b09b25e4 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
@@ -67,19 +68,24 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
+			path: "/user",
+			component: _0d238d02,
+			name: "user"
+		},
+		{
 			path: "/user/login",
 			component: _52699fce,
 			name: "user-login"
 		},
 		{
-			path: "/post/:id?",
-			component: _4956efbf,
-			name: "post-id"
-		},
-		{
 			path: "/shop/:id?",
 			component: _2bf37c15,
 			name: "shop-id"
+		},
+		{
+			path: "/post/:id?",
+			component: _4956efbf,
+			name: "post-id"
 		},
 		{
 			path: "/",

@@ -22,7 +22,7 @@
               <a href="#">track order</a>
             </li>
             <li>
-              <a href="#">my account</a>
+              <a href="./user">个人中心</a>
             </li>
           </ul>
         </div>
