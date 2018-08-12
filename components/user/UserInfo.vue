@@ -14,11 +14,11 @@
           <Col span="19" style="margin-top:10px">
           <div class="info-container" style="width:100%;height:140px">
             <div class="info-item">
-              <span class="key">Name:</span>
+              <span class="key">姓名:</span>
               <span class="value">{{user.uname}}</span>
             </div>
             <div class="info-item">
-              <span class="key">Mobile:</span>
+              <span class="key">手机号:</span>
               <span class="value">
                 <span v-if="!editMobile"> {{user.mobile}}</span>
                 <Input v-else v-model="user.mobile" placeholder="Enter Mobile" style="width: 200px"></Input>
@@ -32,7 +32,7 @@
               </span>
             </div>
             <div class="info-item">
-              <span class="key">Email:</span>
+              <span class="key">邮箱:</span>
               <span class="value">
                 <span v-if="!editEmail"> {{user.email}}</span>
                 <Input v-else v-model="user.email" placeholder="Enter something..." style="width: 200px"></Input>
@@ -46,7 +46,7 @@
               </span>
             </div>
             <div class="info-item">
-              <span class="key">Password:</span>
+              <span class="key">密码:</span>
               <span class="value">
                 <span v-if="!editPassword"> {{user.password}}</span>
                 <Input v-else v-model="copyUser.password" placeholder="Enter Password" style="width: 200px"></Input>

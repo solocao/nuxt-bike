@@ -3,39 +3,38 @@
     <row>
       <Col span="4">
       <div class="user-shop-box">
-        <Card :bordered="false">
-          <p slot="title">我的</p>
-          <div class="user-shop-container">
-            <ul>
-              <li @click="switchTab('info')">
-                <span>账户资料</span>
-              </li>
-              <li @click="switchTab('cart')">
-                <span>我的购物车</span>
-              </li>
-              <li @click="switchTab('order')">
-                <span>我的订单</span>
-              </li>
+        <div class="user-shop-container">
+          <ul>
+            <li @click="switchTab('info')">
+              <span>账户资料</span>
+            </li>
+            <li @click="switchTab('credit')">
+              <span>我的信用卡</span>
+            </li>
+            <li @click="switchTab('order')">
+              <span>我的订单</span>
+            </li>
 
-              <li @click="switchTab('address')">
-                <span>收货地址</span>
-              </li>
-              <li @click="switchTab('loves')">
-                <span>Loves</span>
-              </li>
-            </ul>
-          </div>
-        </Card>
+            <li @click="switchTab('address')">
+              <span>收货地址</span>
+            </li>
+            <li @click="switchTab('loves')">
+              <span>Loves</span>
+            </li>
+          </ul>
+        </div>
 
       </div>
       </Col>
       <Col class="shop-tab" span="20">
       <user-info v-if="activeTab==='info'"></user-info>
+      <user-love v-if="activeTab==='loves'"></user-love>
+      <user-credit v-if="activeTab==='credit'"></user-credit>
       <!-- <shop-cart v-if="activeTab==='cart'"></shop-cart> -->
       <!-- <shop-list v-if="activeTab==='order'"></shop-list>
       <user-address v-if="activeTab==='address'"></user-address>
 
-      <user-loves v-if="activeTab==='loves'"></user-loves> -->
+-->
       </Col>
     </row>
   </div>
@@ -45,12 +44,13 @@
 // import ShopList from '../../components/ShopList.vue';
 // import UserAddress from '../../components/shop/UserAddress.vue';
 import UserInfo from '../../components/user/UserInfo.vue';
-// import UserLoves from '../../components/shop/UserLoves.vue';
+import UserLove from '../../components/user/UserLove.vue';
+import UserCredit from '../../components/user/UserCredit.vue';
 // import ShopCart from './cart.vue';
 export default {
   data() {
     return {
-      activeTab: 'cart'
+      activeTab: 'info'
     }
   },
   layout: 'shop',
@@ -60,14 +60,14 @@ export default {
     // UserAddress,
     // ShopCart,
     UserInfo,
-    // UserLoves
+    UserLove,
+    UserCredit
   },
   methods: {
     switchTab(active) {
       this.activeTab = active
     }
   }
-
 }
 </script>
 <style lang="stylus">
@@ -78,7 +78,6 @@ export default {
   .user-shop-box {
     background: white;
     border: 1px solid #dcdcdc;
-    border-radius: 10px;
     border-color: rgba(0, 0, 0, 0.14);
     box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
 
