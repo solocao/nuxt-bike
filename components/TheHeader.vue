@@ -92,13 +92,13 @@
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="nav navbar-nav a-nav">
               <li class="active dropdown">
-                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
               </li>
               <li>
-                <a href="about.html">电单车</a>
+                <a href="/bike">电单车</a>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
+                <a href=".bi" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
