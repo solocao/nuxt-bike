@@ -3,24 +3,24 @@
     <div class="container">
       <div class="row sectionTitle">
         <h3>合作品牌</h3>
-        <h5>choose best with our favorite brands</h5>
+        <h5>AA电单车合作伙伴</h5>
       </div>
       <div class="row brands">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#"><img src="images/brands/1.png" alt=""></a>
+            <a href="#"><img src="http://www.qqddc.com/fileUpload/brand/20081113143126220875415.jpg" alt=""></a>
           </li>
           <li>
-            <a href="#"><img src="images/brands/2.png" alt=""></a>
+            <a href="#"><img src="http://www.qqddc.com/fileUpload/brand/20081117103312130459576.jpg" alt=""></a>
           </li>
           <li>
-            <a href="#"><img src="images/brands/3.png" alt=""></a>
+            <a href="#"><img src="http://www.qqddc.com/fileUpload/brand/20111123171822118836202.jpg" alt=""></a>
           </li>
           <li>
-            <a href="#"><img src="images/brands/4.png" alt=""></a>
+            <a href="#"><img src="http://www.qqddc.com/fileUpload/brand/20081126145008027101471.jpg" alt=""></a>
           </li>
           <li>
-            <a href="#"><img src="images/brands/5.png" alt=""></a>
+            <a href="#"><img src="http://www.qqddc.com/fileUpload/brand/20090803110059787385373.jpg" alt=""></a>
           </li>
         </ul>
       </div>

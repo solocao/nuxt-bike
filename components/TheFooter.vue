@@ -6,25 +6,25 @@
 
       <div class="row">
         <div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-          <h3>About Us</h3>
+          <h3>关于我们</h3>
           <div class="row">
             <div class="col-md-12">
               <p>
-                Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no. unum ridens expetenda id sit, at usu eius eligendi singulis. Sea ocurreret principes ne.
+                AA电单车是新零售电动车方案供应商
               </p>
             </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-          <h3>Quick Links</h3>
+          <h3>友情链接</h3>
           <div class="row">
             <div class="col-md-12">
               <ul>
                 <li>
-                  <a href="#">Agent</a>
+                  <a href="#">爱玛电动车</a>
                 </li>
                 <li>
-                  <a href="#">Properties Rent</a>
+                  <a href="#">新蕾电动车</a>
                 </li>
                 <li>
                   <a href="#">Properties</a>
@@ -40,31 +40,23 @@
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-          <h3>Services</h3>
+          <h3>服务</h3>
           <div class="row">
             <div class="col-md-12">
               <ul>
                 <li>
-                  <a href="#">Properties</a>
+                  <a href="#">活动承办</a>
                 </li>
                 <li>
-                  <a href="#">Agent</a>
+                  <a href="#">电单车资讯</a>
                 </li>
-                <li>
-                  <a href="#">Properties Rent</a>
-                </li>
-                <li>
-                  <a href="#">Properties</a>
-                </li>
-                <li>
-                  <a href="#">Rentals</a>
-                </li>
+
               </ul>
             </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 footer-col">
-          <h3>Contact Us</h3>
+          <h3>联系我们</h3>
           <div class="contact-item">
             <div class="icon">
               <i class="fa fa-map-marker"></i>
