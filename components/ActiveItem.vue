@@ -2,38 +2,36 @@
   <div class="active-item">
     <div class="service-wrap">
       <div class="service-img">
-        <img src="~assets/img/service/1.jpg" alt="">
+        <img :src="active.url" alt="">
         <ul>
           <li>
-            <span class="rent">For Rant</span>
+            <span class="rent">{{active.city}}</span>
           </li>
           <li>
-            <p>$10,000 /
-              <span>month</span>
+            <p>
+              {{active.school}}
+              <span>操场</span>
             </p>
           </li>
         </ul>
       </div>
       <div class="service-content">
-        <h3>The Willows</h3>
-        <span>Little Havana / Miami</span>
-        <p>There are many variations of passages of the Lorem Ipsum available .</p>
+        <h3> {{active.title}}</h3>
+        <span>{{active.sponsor}}</span>
+        <p>{{active.brief}}</p>
         <div class="row">
-          <Col span="10">
+          <Col span="14">
           <span>
-            <i class="fa fa-object-group"></i> 100 ft2
+            <i class="fa fa-calendar"></i> 2018年8月2日
           </span>
           </Col>
-          <Col span="14">
+          <Col span="10">
           <ul class="d-flex meta">
-            <li>3
-              <i class="fa fa-bed"></i>
-            </li>
             <li>4
-              <i class="fa fa-bath"></i>
+              <i class="fa fa-child"></i>
             </li>
             <li>6
-              <i class="fa fa-car"></i>
+              <i class="fa fa-motorcycle"></i>
             </li>
           </ul>
           </Col>
@@ -42,6 +40,21 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    active: {
+      type: Object
+    }
+  },
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+
 
 <style lang="stylus">
 .active-item {

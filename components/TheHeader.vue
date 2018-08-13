@@ -129,8 +129,8 @@
     <div class="row topFeatures m0">
       <div class="container">
         <ul class="nav nav-justified text-center">
-          <li><img src="~assets/img/icons/returns.png" alt="">30天退换</li>
-          <li><img src="~assets/img/icons/delivery-car.png" alt="">便捷物流</li>
+          <li><img src="~assets/img/icons/returns.png" alt="">一年保修</li>
+          <li><img src="~assets/img/icons/delivery-car.png" alt="">厂商直供</li>
           <li><img src="~assets/img/icons/tel24-7.png" alt="">客服支持</li>
         </ul>
       </div>

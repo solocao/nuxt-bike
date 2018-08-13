@@ -18,7 +18,7 @@
         <h5>厂家活动，参与领取大礼包</h5>
       </div>
       <div>
-        <active-item v-for="i in 4" :key="i"></active-item>
+        <active-item :active="active" v-for="active in actives" :key="active.url"></active-item>
       </div>
 
       <div class="row sectionTitle">
@@ -65,7 +65,37 @@ export default {
   data() {
     return {
       highprice: 300,
-      products: []
+      products: [],
+      actives: [{
+        url: 'http://hehecms.oss-cn-hangzhou.aliyuncs.com/ee.jpg',
+        city: '扬州',
+        school: '扬州大学',
+        title: '快乐校园行',
+        sponsor: '新蕾电动车有限公司',
+        brief: '开学季,电动车'
+
+      }, {
+        url: 'https://moto7.tw/imgs/QJ0A6300.jpg',
+        city: '南京',
+        school: '南京大学',
+        title: '快乐校园行',
+        sponsor: '新蕾电动车有限公司',
+        brief: '开学季,电动车'
+      }, {
+        url: 'http://i4.hexunimg.cn/2015-07-30/177952024.jpg',
+        city: '盐城',
+        school: '盐城工学院',
+        title: '快乐校园行',
+        sponsor: '新蕾电动车有限公司',
+        brief: '开学季,电动车'
+      }, {
+        url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534097351472&di=e96187db51bbbfda63a67c8d8e96ea89&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D3835662309%2C1136007658%26fm%3D214%26gp%3D0.jpg',
+        city: '南通',
+        school: '南通大学',
+        title: '快乐校园行',
+        sponsor: '新蕾电动车有限公司',
+        brief: '开学季,电动车'
+      }]
     };
   },
   computed: {
