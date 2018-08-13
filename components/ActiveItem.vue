@@ -59,7 +59,7 @@ export default {
 <style lang="stylus">
 .active-item {
   width: calc(25% - 10px);
-  height: 500px;
+  height: 420px;
   float: left;
   margin: 0px 5px;
 }

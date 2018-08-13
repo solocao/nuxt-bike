@@ -20,6 +20,13 @@
       <div>
         <active-item :active="active" v-for="active in actives" :key="active.url"></active-item>
       </div>
+      <div class="row sectionTitle">
+        <h3>信用卡申请</h3>
+        <h5>买车月供低至99元</h5>
+      </div>
+      <div>
+        <credit-card :credit="credit" v-for="credit in credits" :key="credit.img"></credit-card>
+      </div>
 
       <div class="row sectionTitle">
         <h3>新闻资讯</h3>
@@ -47,6 +54,7 @@ import HomeBanner from '../components/HomeBanner.vue';
 import ThePartner from '../components/ThePartner.vue';
 import TheFooter from '../components/TheFooter.vue';
 import PostLarge from '../components/PostLarge.vue';
+import CreditCard from '../components/CreditCard.vue';
 
 export default {
   layout: 'shop',
@@ -60,7 +68,8 @@ export default {
     ThePartner,
     TheFooter,
     ActiveItem,
-    PostLarge
+    PostLarge,
+    CreditCard
   },
   data() {
     return {
@@ -95,7 +104,29 @@ export default {
         title: '快乐校园行',
         sponsor: '新蕾电动车有限公司',
         brief: '开学季,电动车'
-      }]
+      }],
+      credits: [
+        {
+          img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662962791.jpg',
+          name:'标砖金卡',
+          des:'额度高至5万'
+        },
+        {
+          img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489566.jpg',
+          name:'优逸白金卡',
+               des:'VIP免年费'
+        },
+        {
+          img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489567.jpg',
+          name:'Y-power卡',
+          des:'5积分兑换爆款好礼'
+      
+        },
+        {
+          img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489568.jpg',
+          name:'白金卡',
+           des:'周五刷卡立减5%'
+        }]
     };
   },
   computed: {
