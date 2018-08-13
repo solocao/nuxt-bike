@@ -1,35 +1,43 @@
 <template>
-  <div class="product-item">
-    <div class="product-thumb clearfix">
-      <a href="#" class="product-thumb">
-        <img :src="product.img_list[0].url" alt="image">
-      </a>
-      <span class="tag new sale">在售</span>
-    </div>
-    <div class="product-info clearfix">
-      <span class="product-title">{{product.name}}</span>
-      <div class="price">
-        <del>
-          <span class="regular">$150.00</span>
-        </del>
-        <ins>
-          <span class="amount">{{product.sale_price}} </span>
-        </ins>
+  <div :class="col===3?'product-item-3':'product-item-4'">
+    <div class="product-item">
+      <div class="product-thumb clearfix">
+        <a href="#" class="product-thumb">
+          <img :src="product.img_list[0].url" alt="image">
+        </a>
+        <span class="tag new sale">在售</span>
       </div>
+      <div class="product-info clearfix">
+        <span class="product-title">{{product.name}}</span>
+        <div class="price">
+          <del>
+            <span class="regular">$150.00</span>
+          </del>
+          <ins>
+            <span class="amount">{{product.sale_price}} </span>
+          </ins>
+        </div>
+      </div>
+      <div class="add-to-cart text-center">
+        <a href="#">查看详情</a>
+      </div>
+      <a href="#" class="like">
+        <i class="fa fa-heart-o"></i>
+      </a>
     </div>
-    <div class="add-to-cart text-center">
-      <a href="#">ADD TO CART</a>
-    </div>
-    <a href="#" class="like">
-      <i class="fa fa-heart-o"></i>
-    </a>
+
   </div>
+
 </template>
 <script>
 export default {
   props: {
     product: {
       type: Object
+    },
+    col: {
+      type: Number,
+      default: 4
     }
   },
   data() {
@@ -42,11 +50,25 @@ export default {
 </script>
 
 <style lang="stylus">
-.product-content {
-  .product-item:nth-child(4n) {
+.product-item-3:nth-child(3n) {
+  .product-item {
     border-right: 0px;
   }
+}
 
+.product-item-4:nth-child(4n) {
+  .product-item {
+    border-right: 0px;
+  }
+}
+
+.product-item-3 {
+  .product-item {
+    width: 33.3333%;
+  }
+}
+
+.product-item-4 {
   .product-item {
     width: 25%;
   }
