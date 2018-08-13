@@ -23,6 +23,8 @@
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
     "iview": "^3.0.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.1.0",
     "micromatch": "^3.1.10",
     "node-sass": "^4.9.2",
     "nuxt": "^1.0.0",

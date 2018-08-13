@@ -1,5 +1,5 @@
 <template>
-  <div class="user-shop-info">
+  <div class="user-shop-info container">
     <row>
       <Col span="4">
       <div class="user-shop-box">
@@ -11,15 +11,11 @@
             <li @click="switchTab('credit')">
               <span>我的信用卡</span>
             </li>
-            <li @click="switchTab('order')">
-              <span>我的订单</span>
-            </li>
-
-            <li @click="switchTab('address')">
-              <span>收货地址</span>
-            </li>
             <li @click="switchTab('loves')">
-              <span>Loves</span>
+              <span>我的心愿单</span>
+            </li>
+            <li @click="switchTab('address')">
+              <span>我的地址</span>
             </li>
           </ul>
         </div>
@@ -30,6 +26,7 @@
       <user-info v-if="activeTab==='info'"></user-info>
       <user-love v-if="activeTab==='loves'"></user-love>
       <user-credit v-if="activeTab==='credit'"></user-credit>
+      <user-address v-if="activeTab==='address'"></user-address>
       <!-- <shop-cart v-if="activeTab==='cart'"></shop-cart> -->
       <!-- <shop-list v-if="activeTab==='order'"></shop-list>
       <user-address v-if="activeTab==='address'"></user-address>
@@ -46,6 +43,7 @@
 import UserInfo from '../../components/user/UserInfo.vue';
 import UserLove from '../../components/user/UserLove.vue';
 import UserCredit from '../../components/user/UserCredit.vue';
+import UserAddress from '../../components/user/UserAddress.vue';
 // import ShopCart from './cart.vue';
 export default {
   data() {
@@ -61,7 +59,8 @@ export default {
     // ShopCart,
     UserInfo,
     UserLove,
-    UserCredit
+    UserCredit,
+    UserAddress
   },
   methods: {
     switchTab(active) {

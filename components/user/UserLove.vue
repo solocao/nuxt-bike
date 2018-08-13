@@ -1,7 +1,7 @@
 <template>
   <div class="user-loves">
     <Card :bordered="false">
-      <p slot="title">我的订单</p>
+      <p slot="title">我的心愿单</p>
       <a href="#" slot="extra" @click="lovesList">
         <Icon type="ios-loop-strong"></Icon>
         刷新
