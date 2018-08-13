@@ -7,6 +7,7 @@ const _d1c7bcd0 = () => import('../pages/bike/index.vue' /* webpackChunkName: "p
 const _0d238d02 = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
 const _52699fce = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
 const _2bf37c15 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
+const _0df5aa00 = () => import('../pages/bike/_id.vue' /* webpackChunkName: "pages/bike/_id" */).then(m => m.default || m)
 const _4956efbf = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
 const _b09b25e4 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -87,6 +88,11 @@ export function createRouter () {
 			path: "/shop/:id?",
 			component: _2bf37c15,
 			name: "shop-id"
+		},
+		{
+			path: "/bike/:id",
+			component: _0df5aa00,
+			name: "bike-id"
 		},
 		{
 			path: "/post/:id?",

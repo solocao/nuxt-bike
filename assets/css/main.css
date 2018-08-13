@@ -101,11 +101,11 @@ button {
   padding: 10px 30px;
   font-size: 13px;
   font-weight: 600;
-  border-radius: 1000px;
+  border-radius: 2px;
   cursor: pointer;
   background: white;
-  color: #3e64ea;
-  border: 1px solid #3e64ea;
+  color: #33AC41;
+  border: 1px solid #33AC41;
   font-family: 'Barlow', sans-serif;
   text-transform: uppercase;
   margin: 10px;
@@ -113,7 +113,7 @@ button {
 }
 
 button:hover {
-  background: #3e64ea;
+  background: #33AC41;
   color: white;
   transition: 0.2s all ease-in;
 }

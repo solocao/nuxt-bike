@@ -22,7 +22,7 @@
               <a href="#">订单</a>
             </li>
             <li>
-              <a href="./user">个人中心</a>
+              <a href="ICol/user">个人中心</a>
             </li>
           </ul>
         </div>

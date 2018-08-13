@@ -18,7 +18,7 @@
 
       <div class="bike-color">
         <div class="a-head">
-          颜色
+          电单车颜色
         </div>
         <div class="a-color">
           <ul class="color-widget mt-30">
@@ -33,7 +33,7 @@
 
       <div class="bike-price">
         <div class="a-head">
-          价格
+          价格区间
         </div>
         <div class="a-price">
           <Slider v-model="value2" range></Slider>
