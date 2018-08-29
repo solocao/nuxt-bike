@@ -15,6 +15,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_iview_fabcf5d2 from 'nuxt_plugin_iview_fabcf5d2' // Source: ../plugins/iview
 import nuxt_plugin_axios_54e49ad0 from 'nuxt_plugin_axios_54e49ad0' // Source: ../plugins/axios.js
 import nuxt_plugin_swiper_68e7f06e from 'nuxt_plugin_swiper_68e7f06e' // Source: ../plugins/swiper.js (ssr: false)
+import nuxt_plugin_route_338f5eda from 'nuxt_plugin_route_338f5eda' // Source: ../plugins/route
 
 
 // Component: <no-ssr>
@@ -155,6 +156,7 @@ async function createApp (ssrContext) {
   
   if (typeof nuxt_plugin_iview_fabcf5d2 === 'function') await nuxt_plugin_iview_fabcf5d2(app.context, inject)
   if (typeof nuxt_plugin_axios_54e49ad0 === 'function') await nuxt_plugin_axios_54e49ad0(app.context, inject)
+  if (typeof nuxt_plugin_route_338f5eda === 'function') await nuxt_plugin_route_338f5eda(app.context, inject)
   
   if (process.browser) { 
     if (typeof nuxt_plugin_swiper_68e7f06e === 'function') await nuxt_plugin_swiper_68e7f06e(app.context, inject)

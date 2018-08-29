@@ -1,7 +1,10 @@
 import Vuex from 'vuex';
+import db from '../lib/db'
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      login: db === null ? false : db.get('login').value(),
+      user: null,
       cartTotal: 0,
       cart: [
         {
@@ -131,7 +134,7 @@ const createStore = () => {
         const keys = Object.keys(params);
         keys.forEach(x => {
           const val = params[x];
-          // db.set(x, val).write();
+          db.set(x, val).write();
           state[x] = val;
         });
       },

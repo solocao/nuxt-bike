@@ -44,12 +44,18 @@ import UserInfo from '../../components/user/UserInfo.vue';
 import UserLove from '../../components/user/UserLove.vue';
 import UserCredit from '../../components/user/UserCredit.vue';
 import UserAddress from '../../components/user/UserAddress.vue';
+
+import store from '../../store'
+import { mapState } from 'vuex';
 // import ShopCart from './cart.vue';
 export default {
   data() {
     return {
       activeTab: 'info'
     }
+  },
+  computed: {
+    ...mapState(['user']),
   },
   layout: 'shop',
   components: {

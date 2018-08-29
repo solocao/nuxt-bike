@@ -14,13 +14,13 @@
         </transition>
         <transition name="fadeLeft">
           <div v-show="isLogin" v-click-outside="onClickOutside">
-            <i-input size="large" placeholder="用户名,没有会自动注册" ref="user" v-model="username" @on-enter="login" style="marginBottom:20px"></i-input>
+            <!-- <i-input size="large" placeholder="用户名,没有会自动注册" ref="user" v-model="username" @on-enter="login" style="marginBottom:20px"></i-input> -->
             <i-input size="large" placeholder="密码" type="password" v-model="password" @on-enter="login"></i-input>
           </div>
         </transition>
       </div>
     </transition>
-    <div v-if="page === 1" class="section section-login" style="zIndex: 6">
+    <!-- <div v-if="page === 1" class="section section-login" style="zIndex: 6">
       <transition name="fade">
 
         <div class="fullscreen" :class="{'is-login': isLogin}" ref="wallpaper" style="height: calc(100vh - 40px)">
@@ -57,9 +57,9 @@
         </div>
       </transition>
       <div class="about-btn" @click="page = 1">p.login.about</div>
-    </div>
+    </div> -->
 
-    <div class="section section-about" style="zIndex: 5" :class="{'is-old': page > 1}">
+    <!-- <div class="section section-about" style="zIndex: 5" :class="{'is-old': page > 1}">
       <em-shape-shifter v-if="page === 1"></em-shape-shifter>
       <div class="feature-list">
         <transition-group name="fadeDown">
@@ -75,7 +75,7 @@
             <transition name="zoom">
               <div v-show="featureVisible">
                 <div class="feature-icon">
-                  <img src="/public/images/icon-swagger.png" style="margin-left: 1px;">
+                  <img src="/public/images/icon-swagger.png" style="marginLeft: 1px;">
                 </div>
                 <h2>p.login.feature[0]</h2>
                 <p>p.login.feature[0]</p>
@@ -86,7 +86,7 @@
             <transition name="zoom">
               <div v-show="featureVisible">
                 <div class="feature-icon">
-                  <img src="/public/images/icon-mock.png" style="margin-left: 1px;">
+                  <img src="/public/images/icon-mock.png" style="marginLeft: 1px;">
                 </div>
                 <h2>p.login.feature[1</h2>
                 <p>p.login.feature[2</p>
@@ -141,7 +141,7 @@
           </i-col>
         </Row>
       </div>
-    </div>
+    </div> -->
 
     <div class="pagination">
       <div class="dot" :class="{'active': page === 0}" @click="page = 0"></div>
@@ -180,7 +180,7 @@ export default {
     img.onload = () => {
       this.wallpaperVisible = true
       this.$nextTick(() => {
-        // this.$refs.wallpaper.style.background = `url(https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjExOTUwfQ&s=01bb6c9935ded6d970fad6809a18c3ed?w=2200)`
+        this.$refs.wallpaper.style.background = `url(https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjExOTUwfQ&s=01bb6c9935ded6d970fad6809a18c3ed?w=2200)`
         // this.$refs.wallpaper.style.backgroundSize = 'cover'
         // this.$refs.wallpaper.style.backgroundPosition = '50% 50%'
       })
@@ -228,10 +228,7 @@ export default {
       }
       const result = await this.post(params)
       if (result.code === 1) {
-        this.set({ login: true, user: result.data })
-        this.$router.push({
-          path: '/'
-        })
+        alert('登录成功');
       } else {
         this.$Modal.confirm({
           title: '提示',
