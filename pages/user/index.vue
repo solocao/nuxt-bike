@@ -55,7 +55,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['user']),
+    ...mapState(['login', 'user']),
   },
   layout: 'shop',
   components: {
@@ -67,6 +67,12 @@ export default {
     UserLove,
     UserCredit,
     UserAddress
+  },
+
+  created() {
+    if (this.login !== true) {
+      this.$router.push({ path: '/user/login' })
+    }
   },
   methods: {
     switchTab(active) {

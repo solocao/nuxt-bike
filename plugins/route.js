@@ -1,12 +1,16 @@
+import store from '../store';
 export default ({ app }) => {
-  const store = app.store;
+
   app.router.afterEach((to, from) => {
-    if (to.path === '/user') {
-      console.log('看看咯啊')
-      console.log(store.state)
-      if (store.state.login === false) {
-        app.router.push({ path: '/user/login' })
-      }
-    }
+    console.log('看看route里面的');
+    console.log(app.store.state.login)
+    // const store = app.store;
+    // console.log(app.store);
+    // if (to.path === '/user') {
+
+    // if (app.store.state.login !== true) {
+    //   app.router.push({ path: '/user/login' })
+    // }
+    // }
   })
 }

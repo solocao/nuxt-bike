@@ -228,6 +228,7 @@ export default {
       }
       const result = await this.post(params)
       if (result.code === 1) {
+        console.log(result.data)
         this.set({ login: true, user: result.data })
         this.$router.push({
           path: '/'

@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="add-to-cart text-center">
-        <a href="#">查看详情</a>
+        <nuxt-link :to="'/bike/'+product._id">查看详情</nuxt-link>
       </div>
       <a href="#" class="like">
         <i class="fa fa-heart-o"></i>

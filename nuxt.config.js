@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
 
-  plugins: [{ src: '~plugins/iview', ssr: true }, '~plugins/axios.js', { src: '~/plugins/swiper.js', ssr: false }, '~/plugins/route'],
+  plugins: [{ src: '~plugins/iview', ssr: true }, '~plugins/axios.js', { src: '~/plugins/swiper.js', ssr: false }, { src: '~/plugins/route' }, { src: '~/plugins/localStorage.js', ssr: false }],
 
   css: ['~assets/css/main.css', '~style/app.styl', '~assets/css/bootstrap.min.css', 'font-awesome/css/font-awesome.min.css', 'swiper/dist/css/swiper.css'],
   /*

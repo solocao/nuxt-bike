@@ -5,7 +5,7 @@
         <div class="row">
           <ul class="nav nav-pills fleft">
             <li>
-              <a href="index.html">首页</a>
+              <a href="/">首页</a>
             </li>
             <li>
               <a href="about.html">关于我们</a>
@@ -22,7 +22,7 @@
               <a href="#">订单</a>
             </li>
             <li>
-              <a href="/user">个人中心</a>
+              <nuxt-link class="error-link" to="/user">个人中心</nuxt-link>
             </li>
           </ul>
         </div>
