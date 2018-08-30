@@ -11,7 +11,7 @@
         </div>
         <div>
           <button text="评论" class="btn-small" style="float:right" @click="commentAdd">评论</button>
-          <button text="刷新" class="btn-small" style="float:right" @click="commentList">刷新</button>
+          <button text="刷新" class="btn-small" style="float:right;marginRight:10px" @click="commentList">刷新</button>
         </div>
 
       </div>

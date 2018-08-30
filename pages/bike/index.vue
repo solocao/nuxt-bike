@@ -31,14 +31,14 @@
         </div>
       </div>
 
-      <div class="bike-price">
+      <!-- <div class="bike-price">
         <div class="a-head">
           价格区间
         </div>
         <div class="a-price">
           <Slider v-model="value2" range></Slider>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="bike-hot">
         <div class="a-head">

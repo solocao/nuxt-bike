@@ -11,10 +11,10 @@
         <span class="product-title">{{product.name}}</span>
         <div class="price">
           <del>
-            <span class="regular">$150.00</span>
+            <span class="regular">¥{{product.official_price}}</span>
           </del>
           <ins>
-            <span class="amount">{{product.sale_price}} </span>
+            <span class="amount">¥{{product.sale_price}} </span>
           </ins>
         </div>
       </div>
@@ -156,8 +156,10 @@ export default {
     del {
       font-size: 16px;
       line-height: 36px;
+      font-weight: 600;
       color: #c5c5c5;
       font-weight: 100;
+      margin-right: 5px;
     }
 
     ins {
@@ -166,6 +168,7 @@ export default {
       font-weight: 600;
       color: #33AC41;
       text-decoration: none;
+      margin-left: 5px;
     }
   }
 

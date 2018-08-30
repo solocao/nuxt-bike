@@ -98,19 +98,19 @@
                 <a href="/bike">电单车</a>
               </li>
               <li class="dropdown">
-                <a href=".bi" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">信用卡</a>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">行业新闻</a>
               </li>
               <li class="dropdown megaMenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">活动</a>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">活动</a>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">优惠券</a>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">优惠券</a>
               </li>
               <li>
-                <a href="#">配件</a>
+                <a href="/">配件</a>
               </li>
               <li>
                 <a href="#">视频</a>
