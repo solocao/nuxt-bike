@@ -7,11 +7,11 @@
           电单车品牌
         </div>
         <div class="a-body">
-          <div class="brand-item" v-for="brand in brands" :key="brand.name">{{brand.name}}
+          <div class="brand-item" v-for="brand in brands" :key="brand.name" @click="brandBike(brand._id)">{{brand.name}}
             <span class="brand-num">
-              {{brand.num}}
+              <!-- {{brand.num}} -->
+              9
             </span>
-
           </div>
         </div>
       </div>
@@ -134,12 +134,41 @@ export default {
         console.log('看看products');
         console.log(this.products)
       }
+    },
+    async brand() {
+      const params = {
+        url: 'brand/list',
+        payload: {
+        },
+      }
+      const result = await this.post(params);
+      const brand = [{ name: '全部' }]
+
+      if (result.code === 1) {
+        this.brands = brand.concat(result.data);
+      }
+    },
+    async brandBike(brandID) {
+      const brands = [];
+      brands.push(brandID)
+      const params = {
+        url: 'product/list',
+        payload: {
+          brand_ids: JSON.stringify(brands)
+        },
+      }
+      const result = await this.post(params);
+      if (result.code === 1) {
+        const data = result.data;
+        this.products = data;
+      }
     }
 
 
   },
   mounted() {
     this.bike()
+    this.brand()
   }
 }
 </script>
@@ -164,7 +193,7 @@ export default {
       align-items: center;
       justify-content: flex-start;
       padding-left: 6px;
-      box-shadow: 0px 2px 2px 1px rgba(3, 11, 12, 0.15);
+      box-shadow: 0px 2px 2px 1px rgba(3, 11, 12, 0.06);
       cursor: pointer;
 
       &:hover {
