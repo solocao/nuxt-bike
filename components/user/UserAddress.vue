@@ -134,8 +134,6 @@ export default {
       }
       const result = await this.get(params)
       this.addresses = result.data
-      console.log('看看结果')
-      console.log(result)
     },
 
     ok() {
@@ -203,8 +201,9 @@ export default {
         auth: true
       }
       const result = await this.post(params)
-      console.log(result)
-      this.addressList()
+      if (result.code === 1) {
+        this.addressList()
+      }
     },
     handleUpdate(item) {
       this.mode = 'update'
@@ -215,7 +214,7 @@ export default {
     }
   },
   mounted() {
-    // this.addressList()
+    this.addressList()
   }
 }
 </script>
