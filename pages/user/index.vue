@@ -3,23 +3,22 @@
     <row>
       <Col span="4">
       <div class="user-shop-box">
-        <div class="user-shop-container">
-          <ul>
-            <li @click="switchTab('info')">
-              <span>账户资料</span>
-            </li>
-            <li @click="switchTab('credit')">
-              <span>我的信用卡</span>
-            </li>
-            <li @click="switchTab('loves')">
-              <span>我的心愿单</span>
-            </li>
-            <li @click="switchTab('address')">
-              <span>我的地址</span>
-            </li>
-          </ul>
-        </div>
-
+        <Menu :theme="theme3" active-name="credit" width='auto' @on-select="switchTab">
+          <MenuGroup title="我的信息">
+            <MenuItem name="info">
+            <Icon type="md-document" /> 账户资料
+            </MenuItem>
+            <MenuItem name="credit">
+            <Icon type="md-chatbubbles" /> 我的信用卡
+            </MenuItem>
+            <MenuItem name="loves">
+            <Icon type="md-heart" /> 我的心愿单
+            </MenuItem>
+            <MenuItem name="address">
+            <Icon type="md-leaf" /> 我的地址
+            </MenuItem>
+          </MenuGroup>
+        </Menu>
       </div>
       </Col>
       <Col class="shop-tab" span="20">
@@ -87,10 +86,9 @@ export default {
   margin: 0 auto;
 
   .user-shop-box {
-    background: white;
-    border: 1px solid #dcdcdc;
-    border-color: rgba(0, 0, 0, 0.14);
-    box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+    .ivu-menu {
+      z-index: 1;
+    }
 
     .user-shop-header {
       height: 60px;
