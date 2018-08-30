@@ -3,7 +3,11 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       login: false,
-      user: null,
+      user: {
+        name: '',
+        mobile: '',
+        email: ''
+      },
       cartTotal: 0,
       cart: [
         {
@@ -180,5 +184,5 @@ const createStore = () => {
 
 export default createStore;
 
-// // helper
-// const filter = (array, key, value) => array.filter(item => item[key] === value);
+// helper
+const filter = (array, key, value) => array.filter(item => item[key] === value);
