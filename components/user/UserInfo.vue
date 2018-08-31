@@ -21,7 +21,7 @@
               <span class="key">手机号:</span>
               <span class="value">
                 <span v-if="!editMobile"> {{user.mobile ===''?'暂未设置':user.mobile}}</span>
-                <Input v-else v-model="user.mobile" placeholder="Enter Mobile" style="width: 200px"></Input>
+                <Input v-else v-model="user.mobile" placeholder="输入手机号" style="width: 200px"></Input>
               </span>
               <span class="action">
                 <Button v-if="!editMobile" type="ghost" @click="()=>{editMobile=true;this.copyUser.mobile=this.user.mobile}" style="width:80px">设置</Button>
@@ -35,7 +35,7 @@
               <span class="key">邮箱:</span>
               <span class="value">
                 <span v-if="!editEmail">{{user.email ===''?'暂未设置':user.email}}</span>
-                <Input v-else v-model="user.email" placeholder="Enter something..." style="width: 200px"></Input>
+                <Input v-else v-model="user.email" placeholder="输入邮箱" style="width: 200px"></Input>
               </span>
               <span class="action">
                 <Button v-if="!editEmail" type="ghost" @click="()=>{editEmail=true;this.copyUser.email=this.user.email}" style="width:80px">设置</Button>

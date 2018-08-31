@@ -6,16 +6,8 @@ import store from '../store';
 axios.defaults.timeout = 5000;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.baseURL = 'http://0.0.0.0:8082';
-
 // axios.defaults.withCredentials = true
-
-
-
-
 export default ({ app }) => {
-  console.log('看看app')
-  console.log(app)
-
   const get = (params) => {
     const { url, payload, auth } = params;
     let config = {};

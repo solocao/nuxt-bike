@@ -157,8 +157,7 @@ export default {
   },
   mounted() {
     this.bike();
-
-
+    // alert(process.env.NODE_ENV);
   }
 };
 </script>
