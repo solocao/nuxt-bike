@@ -28,17 +28,17 @@
         <credit-card :credit="credit" v-for="credit in credits" :key="credit.img"></credit-card>
       </div>
 
-      <div class="row sectionTitle">
+      <div class="row sectionTitle" v-if="false">
         <h3>新闻资讯</h3>
         <h5>电单车行业新闻</h5>
       </div>
-      <div class="row" style="margin-top:35px">
+      <div class="row" style="margin-top:35px" v-if="false">
         <Col span="16">
         <post-large v-for="i in 8" :key="i"></post-large>
         </Col>
       </div>
       <!-- 合作伙伴 -->
-      <the-partner></the-partner>
+      <the-partner style="margin-top:300px"></the-partner>
     </main>
   </div>
 </template>
@@ -108,24 +108,24 @@ export default {
       credits: [
         {
           img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662962791.jpg',
-          name:'标砖金卡',
-          des:'额度高至5万'
+          name: '标砖金卡',
+          des: '额度高至5万'
         },
         {
           img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489566.jpg',
-          name:'优逸白金卡',
-               des:'VIP免年费'
+          name: '优逸白金卡',
+          des: 'VIP免年费'
         },
         {
           img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489567.jpg',
-          name:'Y-power卡',
-          des:'5积分兑换爆款好礼'
-      
+          name: 'Y-power卡',
+          des: '5积分兑换爆款好礼'
+
         },
         {
           img: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1662489568.jpg',
-          name:'白金卡',
-           des:'周五刷卡立减5%'
+          name: '白金卡',
+          des: '周五刷卡立减5%'
         }]
     };
   },

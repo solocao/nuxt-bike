@@ -21,15 +21,15 @@
       <div class="add-to-cart text-center">
         <nuxt-link :to="'/bike/'+product._id">查看详情</nuxt-link>
       </div>
-      <a href="#" class="like">
-        <i class="fa fa-heart-o"></i>
-      </a>
+      <span class="like">
+        <Icon :type="heart.type" :size="36" :color="heart.color" @click="switchLoveHeart(product._id)" />
+      </span>
+
     </div>
-
   </div>
-
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 export default {
   props: {
     product: {
@@ -44,8 +44,57 @@ export default {
     return {
 
     }
+  },
+  computed: {
+    ...mapState(['loves']),
+    heart() {
+      if (this.loves.findIndex(x => x === this.product._id) > -1) {
+        return {
+          type: 'md-heart',
+          color: 'red'
+        }
+      } else {
+        return {
+          type: 'md-heart-outline',
+          color: '#46B211'
+        }
+      }
+    },
+  },
+  methods: {
+    ...mapMutations({
+      set: 'set'
+    }),
+    async switchLoveHeart(productID) {
+      const index = this.loves.findIndex(x => x === productID)
+      if (index > -1) {
+        this.loves.splice(index, 1)
+        this.set({ loves: this.loves })
+        const params = {
+          url: 'user/loves/delete',
+          payload: {
+            product_id: productID
+          },
+          auth: true
+        }
+        const result = await this.post(params)
+        console.log(result)
+      } else {
+        this.loves.push(productID)
+        this.set({ loves: this.loves })
+        // 后台新增
+        const params = {
+          url: 'user/loves/add',
+          payload: {
+            product_id: productID
+          },
+          auth: true
+        }
+        const result = await this.post(params)
+        console.log(result)
+      }
+    }
   }
-
 }
 </script>
 
@@ -96,6 +145,7 @@ export default {
       opacity: 1;
       visibility: visible;
       transform: translate(0px, 0px);
+      cursor: pointer;
     }
   }
 

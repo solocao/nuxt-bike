@@ -47,7 +47,7 @@ export default {
   width: calc(25% - 10px);
   float: left;
   margin: 0px 5px;
-  height: 320px;
+  height: 260px;
 
   &:hover {
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
