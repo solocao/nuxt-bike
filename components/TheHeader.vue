@@ -91,10 +91,10 @@
 
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="nav navbar-nav a-nav">
-              <li class="active dropdown">
+              <li class="active" @click="activeMenu='index'">
                 <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">首页</a>
               </li>
-              <li>
+              <li @click="activeMenu='bike'">
                 <a href="/bike">电单车</a>
               </li>
               <li class="dropdown">
@@ -145,7 +145,8 @@ export default {
   data() {
     return {
       showCart: false,
-      userCart: false
+      userCart: false,
+      activeMenu: 'index',
     }
   },
   components: {
@@ -153,10 +154,22 @@ export default {
     ShopHeader,
     UserHoverCard
   },
+
+  methods: {
+
+  },
   computed: {
+    // activeMenu() {
+    //   // return this.$router.match(location).name;
+    //   return 'asf'
+    // },
     cartTotal() {
       return this.$store.state.cartTotal;
     }
+  },
+  mounted() {
+    console.log('看看这个route');
+    console.log(this.$router.match(location).name)
   }
 };
 </script>

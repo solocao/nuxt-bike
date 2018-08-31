@@ -5,11 +5,11 @@
         <Col span="6">
         <div class="homeBanner">
           <div class="row-img">
-            <img src="~assets/img/banner/homeBanner1.png" alt="" class="bgImage">
+            <img src="https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/4de3471d76b0b6266d2593783548bf54_259_146.jpg" alt="" class="bgImage" style="width:288px;height:180px">
             <div class="row m0 bannerTextArea">
               <div class="row m0 bannerTextAreaInner">
-                <h4>new year sales</h4>
-                <h5>now in stores</h5>
+                <h4>新年特惠</h4>
+                <h5>正在热销</h5>
               </div>
             </div>
           </div>
@@ -18,18 +18,18 @@
         <Col span="12">
         <div class="homeBanner">
           <div class="row">
-            <img src="~assets/img/banner/homeBanner2.png" alt="" class="bgImage">
+            <img src="http://www.xlddc.cn/uploads/20171030/20171030143338122.jpg" alt="" class="bgImage" style="width:585px;height:180px">
           </div>
         </div>
         </Col>
         <Col span="6">
         <div class="homeBanner">
           <div class="row-img">
-            <img src="~assets/img/banner/homeBanner3.png" alt="" class="bgImage">
+            <img src="https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/cd1f14dbb7ef9eb7fe4b96da2ed403bb_259_146.jpg" alt="" class="bgImage" style="width:288px;height:180px">
             <div class="row m0 bannerTextArea">
               <div class="row m0 bannerTextAreaInner">
-                <h4>new arrivals</h4>
-                <h5>shop now</h5>
+                <h4>新品推荐</h4>
+                <h5>立即购买</h5>
               </div>
             </div>
           </div>
