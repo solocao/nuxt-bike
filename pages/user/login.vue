@@ -152,7 +152,6 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { isMobile } from '../../lib/regex.js'
 import { md5 } from '../../lib/utils'
 let resizeTimer
 
