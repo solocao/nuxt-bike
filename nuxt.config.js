@@ -25,6 +25,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    node: {
+      fs: 'empty',
+    },
     /*
     ** Run ESLint on save
     */
