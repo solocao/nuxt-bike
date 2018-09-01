@@ -3,14 +3,14 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _d1c7bcd0 = () => import('../pages/bike/index.vue' /* webpackChunkName: "pages/bike/index" */).then(m => m.default || m)
-const _0d238d02 = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
-const _52699fce = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
-const _df83d962 = () => import('../pages/active/join.vue' /* webpackChunkName: "pages/active/join" */).then(m => m.default || m)
-const _2bf37c15 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
-const _0df5aa00 = () => import('../pages/bike/_id.vue' /* webpackChunkName: "pages/bike/_id" */).then(m => m.default || m)
-const _4956efbf = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
-const _b09b25e4 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _8e570360 = () => import('../pages/bike/index.vue' /* webpackChunkName: "pages/bike/index" */).then(m => m.default || m)
+const _2edbe9ba = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
+const _0ef8e65e = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
+const _b4dd64d2 = () => import('../pages/active/join.vue' /* webpackChunkName: "pages/active/join" */).then(m => m.default || m)
+const _99e8b266 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
+const _d5e45690 = () => import('../pages/bike/_id.vue' /* webpackChunkName: "pages/bike/_id" */).then(m => m.default || m)
+const _5f21cb12 = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
+const _2170fd56 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
 
@@ -72,42 +72,42 @@ export function createRouter () {
     routes: [
 		{
 			path: "/bike",
-			component: _d1c7bcd0,
+			component: _8e570360,
 			name: "bike"
 		},
 		{
 			path: "/user",
-			component: _0d238d02,
+			component: _2edbe9ba,
 			name: "user"
 		},
 		{
 			path: "/user/login",
-			component: _52699fce,
+			component: _0ef8e65e,
 			name: "user-login"
 		},
 		{
 			path: "/active/join",
-			component: _df83d962,
+			component: _b4dd64d2,
 			name: "active-join"
 		},
 		{
 			path: "/shop/:id?",
-			component: _2bf37c15,
+			component: _99e8b266,
 			name: "shop-id"
 		},
 		{
 			path: "/bike/:id",
-			component: _0df5aa00,
+			component: _d5e45690,
 			name: "bike-id"
 		},
 		{
 			path: "/post/:id?",
-			component: _4956efbf,
+			component: _5f21cb12,
 			name: "post-id"
 		},
 		{
 			path: "/",
-			component: _b09b25e4,
+			component: _2170fd56,
 			name: "index"
 		}
     ],
