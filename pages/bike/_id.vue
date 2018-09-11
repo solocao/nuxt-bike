@@ -24,7 +24,9 @@
           <h4>{{product.name}}</h4>
           <h6>
             <span>{{product.description}}</span>
+
             <span class="price">
+              <span>价格</span>
               <em>¥</em>
               <i>{{product.sale_price}}</i>
             </span>
@@ -32,10 +34,19 @@
         </div>
         <div class="num">
           <span class="params-name">数量</span>
-          <!-- <buy-num @edit-num="editNum" :limit="Number(product.limit_num)"></buy-num> -->
+
+          <div class="a-inline-num">
+            <button class="btn btn-default" @click="minNum">
+              <i class="fa fa-minus"></i>
+            </button>
+            <input type="text" class="form-control" :value="num">
+            <button class="btn btn-default" @click="num++">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
         </div>
         <div class="buy">
-          <button text="加入购物车" class="btn-shop" style="margin-right:10px">加入购物车</button>
+          <button text="加入购物车" class="btn-shop" style="margin-right:10px" @click="addCart">加入购物车</button>
           <button text="加入购物车" class="btn-shop" style="margin-right:10px">立即购买</button>
         </div>
       </div>
@@ -60,15 +71,12 @@ export default {
   },
   data() {
     return {
-
       value: null,
       productMsg: {},
       small: ['http://www.qqddc.com/fileUpload/products/20130621150159666226985.jpg', 'http://www.qqddc.com/fileUpload/products/20130621150159666226985.jpg', 'http://www.qqddc.com/fileUpload/products/20130621150159666226985.jpg'],
-
       big: null,
-
       product: {},
-      productNum: 1,
+      num: 1,
       item: null
     };
   },
@@ -87,6 +95,11 @@ export default {
       this.big = this.product.img_list[0].url
       console.log('看看结果')
       console.log(this.product)
+    },
+    minNum() {
+      if (this.num > 1) {
+        this.num = this.num - 1;
+      }
     },
     addCart() {
       alert('加入购物车');
@@ -295,6 +308,10 @@ export default {
   font-size: 16px;
   line-height: 20px;
   text-align: right;
+
+  > span {
+    color: #9e9e9e;
+  }
   i {
     padding-left: 2px;
     font-size: 24px;
@@ -305,5 +322,15 @@ export default {
   width: 145px;
   height: 50px;
   line-height: 48px;
+}
+.a-inline-num {
+  display: flex;
+  input {
+    width: 60px;
+    margin: 0px 6px;
+  }
+  .fa {
+    color: #9e9e9e;
+  }
 }
 </style>
