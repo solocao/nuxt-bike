@@ -35,7 +35,8 @@
           <!-- <buy-num @edit-num="editNum" :limit="Number(product.limit_num)"></buy-num> -->
         </div>
         <div class="buy">
-          <button text="加入购物车" class="btn-shop" style="margin-right:10px">加入心愿单</button>
+          <button text="加入购物车" class="btn-shop" style="margin-right:10px">加入购物车</button>
+          <button text="加入购物车" class="btn-shop" style="margin-right:10px">立即购买</button>
         </div>
       </div>
     </div>
@@ -86,8 +87,10 @@ export default {
       this.big = this.product.img_list[0].url
       console.log('看看结果')
       console.log(this.product)
-    }
-
+    },
+    addCart() {
+      alert('加入购物车');
+    },
     // ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART'])
     // async getProductDetail(id) {
     //   const result = await productDetail(id);

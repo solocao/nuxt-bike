@@ -69,9 +69,11 @@
               </ul>
             </div>
             <div class="fleft cartCount">
-              <div class="cartCountInner row m0">
-                <span class="badge">2</span>
-              </div>
+              <nuxt-link class="error-link" to="/shop/cart">
+                <div class="cartCountInner row m0">
+                  <span class="badge">2</span>
+                </div>
+              </nuxt-link>
             </div>
           </div>
         </div>

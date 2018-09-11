@@ -3,14 +3,15 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _8e570360 = () => import('../pages/bike/index.vue' /* webpackChunkName: "pages/bike/index" */).then(m => m.default || m)
-const _2edbe9ba = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
-const _0ef8e65e = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
-const _b4dd64d2 = () => import('../pages/active/join.vue' /* webpackChunkName: "pages/active/join" */).then(m => m.default || m)
-const _99e8b266 = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
-const _d5e45690 = () => import('../pages/bike/_id.vue' /* webpackChunkName: "pages/bike/_id" */).then(m => m.default || m)
-const _5f21cb12 = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
-const _2170fd56 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _d6010e56 = () => import('../pages/bike/index.vue' /* webpackChunkName: "pages/bike/index" */).then(m => m.default || m)
+const _0b06e43f = () => import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */).then(m => m.default || m)
+const _56a2f154 = () => import('../pages/user/login.vue' /* webpackChunkName: "pages/user/login" */).then(m => m.default || m)
+const _4552be78 = () => import('../pages/shop/cart.vue' /* webpackChunkName: "pages/shop/cart" */).then(m => m.default || m)
+const _4ec5a3b2 = () => import('../pages/active/join.vue' /* webpackChunkName: "pages/active/join" */).then(m => m.default || m)
+const _149e1b88 = () => import('../pages/post/_id.vue' /* webpackChunkName: "pages/post/_id" */).then(m => m.default || m)
+const _8b60a706 = () => import('../pages/bike/_id.vue' /* webpackChunkName: "pages/bike/_id" */).then(m => m.default || m)
+const _4f6502dc = () => import('../pages/shop/_id.vue' /* webpackChunkName: "pages/shop/_id" */).then(m => m.default || m)
+const _05bac3b1 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
 
@@ -72,42 +73,47 @@ export function createRouter () {
     routes: [
 		{
 			path: "/bike",
-			component: _8e570360,
+			component: _d6010e56,
 			name: "bike"
 		},
 		{
 			path: "/user",
-			component: _2edbe9ba,
+			component: _0b06e43f,
 			name: "user"
 		},
 		{
 			path: "/user/login",
-			component: _0ef8e65e,
+			component: _56a2f154,
 			name: "user-login"
 		},
 		{
+			path: "/shop/cart",
+			component: _4552be78,
+			name: "shop-cart"
+		},
+		{
 			path: "/active/join",
-			component: _b4dd64d2,
+			component: _4ec5a3b2,
 			name: "active-join"
 		},
 		{
-			path: "/shop/:id?",
-			component: _99e8b266,
-			name: "shop-id"
-		},
-		{
-			path: "/bike/:id",
-			component: _d5e45690,
-			name: "bike-id"
-		},
-		{
 			path: "/post/:id?",
-			component: _5f21cb12,
+			component: _149e1b88,
 			name: "post-id"
 		},
 		{
+			path: "/bike/:id",
+			component: _8b60a706,
+			name: "bike-id"
+		},
+		{
+			path: "/shop/:id?",
+			component: _4f6502dc,
+			name: "shop-id"
+		},
+		{
 			path: "/",
-			component: _2170fd56,
+			component: _05bac3b1,
 			name: "index"
 		}
     ],
