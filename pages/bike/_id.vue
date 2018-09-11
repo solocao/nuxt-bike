@@ -63,6 +63,7 @@
   </div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 import TheComment from '../../components/TheComment.vue'
 export default {
   layout: 'shop',
@@ -80,10 +81,13 @@ export default {
       item: null
     };
   },
-  // computed: {
-  //   ...mapState(['login', 'showMoveImg', 'showCart'])
-  // },
+  computed: {
+    ...mapState(['cart'])
+  },
   methods: {
+    ...mapMutations({
+      set: 'set'
+    }),
     async productDetail() {
       const id = this.$route.params.id;
       const params = {
@@ -102,9 +106,26 @@ export default {
       }
     },
     addCart() {
-      alert('加入购物车');
+      console.log('看看结果123');
+      console.log(this.product);
+
+      const { name, sale_price: price, _id: id, img_list } = this.product;
+
+      const index = this.cart.findIndex(x => x.id === id)
+      if (index === -1) {
+        this.cart.push({
+          id: id,
+          name: name,
+          price: price,
+          img: img_list[0].url,
+          count: this.num
+        })
+      } else {
+        this.cart[index].count = this.cart[index].count + this.num;
+      }
+      this.set({ cart: this.cart })
     },
-    // ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART'])
+
     // async getProductDetail(id) {
     //   const result = await productDetail(id);
     //   if (result.success) {
