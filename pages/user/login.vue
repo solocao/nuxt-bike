@@ -22,41 +22,11 @@
     </transition>
     <div v-if="page === 1" class="section section-login" style="zIndex: 6">
       <transition name="fade">
-
         <div class="fullscreen" :class="{'is-login': isLogin}" ref="wallpaper" style="height: calc(100vh - 40px)">
-          gsdgsgsdgs
+          其他宣传页
         </div>
       </transition>
-      <div class="links">
-        <router-link to="/docs" class="link">Document</router-link>
-        <a href="https://github.com/easy-mock/easy-mock-cli" target="_blank" class="link">CLI</a>
-        <a href="https://github.com/easy-mock/easy-mock" target="_blank" class="link">GitHub</a>
-        <p v-if="copyright">{{copyright}}</p>
-      </div>
-      <transition name="fade">
-        <div class="fullscreen-by" v-if="wallpaperCopyright">
-          <div v-if="wallpaperCopyright.name === 'Bing'">
-            Photo by
-            <a :href="wallpaperCopyright.link" target="_blank">
-              <strong>{{wallpaperCopyright.name}}</strong>
-            </a>
-          </div>
-          <div v-else>
-            Photo by
-            <a :href="wallpaperCopyright.link" target="_blank">
-              <strong>{{wallpaperCopyright.name}}</strong>
-            </a>
-            <strong> / </strong>
-            <a href="https://unsplash.com" target="_blank">
-              <strong>Unsplash</strong>
-            </a>
-            <a :href="wallpaperCopyright.link" target="_blank" class="avatar">
-              <img :src="wallpaperCopyright.profileImage">
-            </a>
-          </div>
-        </div>
-      </transition>
-      <div class="about-btn" @click="page = 1">p.login.about</div>
+      <div class="about-btn" @click="page = 1">AA电单车</div>
     </div>
 
     <div class="section section-about" style="zIndex: 5" :class="{'is-old': page > 1}">
@@ -259,8 +229,9 @@ export default {
         this.$router.push({
           path: '/home/user'
         })
+      } else {
+        this.$Message.error(result.msg);
       }
-      console.log(result)
     },
   }
 }

@@ -177,7 +177,10 @@ const createStore = () => {
         } else {
           state.cart[index].count = count - 1
         }
-      }
+      },
+      logout: (state) => {
+        state.login = false;
+      },
     }
   });
 };

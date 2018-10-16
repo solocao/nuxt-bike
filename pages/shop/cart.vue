@@ -20,41 +20,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="alert" role="alert">
-                  <td class="productImage"><img src="images/product/single/l1.png" alt=""></td>
+                <tr class="alert" v-for="product in cart" :key="product.id">
+                  <td class="productImage"><img :src="product.img" alt=""></td>
                   <td class="productName">
-                    <h6 class="heading">dining table</h6>
-                    <div class="row descList m0">
-                      <dl class="dl-horizontal">
-                        <dt>manufacturer :</dt>
-                        <dd>Tartaan & Co</dd>
-                        <dt>product code :</dt>
-                        <dd>Xuo15</dd>
-                        <dt>color :</dt>
-                        <dd>Black</dd>
-                        <dt>size :</dt>
-                        <dd>Queen</dd>
-                      </dl>
-                    </div>
+                    <h6 class="heading">{{product.name}}</h6>
                   </td>
-
                   <td class="price">
-                    <del>$580</del>$420</td>
+                    ¥{{product.price}}</td>
                   <td>
                     <div class="input-group spinner a-inline-num">
-                      <button class="btn btn-default">
-                        <i class="fa fa-angle-up"></i>
+                      <button class="btn btn-default" @click="cartMinus(product)">
+                        <i class="fa fa-minus"></i>
                       </button>
-                      <input type="text" class="form-control" value="2">
-                      <button class="btn btn-default">
-                        <i class="fa fa-angle-down"></i>
+                      <input type="text" class="form-control" :value="product.count">
+                      <button class="btn btn-default" @click="cartPlus(product)">
+                        <i class="fa fa-plus"></i>
                       </button>
-                      、
                     </div>
                   </td>
-                  <td class="price">$840</td>
+                  <td class="price">{{product.count*product.price}}</td>
                   <td>
-                    <a href="#" class="edit" data-dismiss="alert" aria-label="Close">
+                    <a href="#" class="edit" data-dismiss="alert" aria-label="Close" @click="cartDelete(product)">
                       <i class="fa fa-trash-o"></i>
                     </a>
                   </td>
@@ -71,70 +57,45 @@
               </tfoot>
             </table>
           </div>
-          <div class="row m0">
-            <div class="col-sm-4">
-              <form class="row discountCupon m0" action="#" method="get">
-                <h5 class="heading">Discount codes</h5>
-                <p>Enter your coupon code</p>
-                <input type="text" class="form-control" name="cuponCode" id="cuponCode">
-                <input type="submit" class="btn btn-default btn-sm" value="apply code">
-              </form>
-            </div>
-            <div class="col-sm-4">
-              <form class="row m0 shippingTax" action="#" method="get">
-                <h5 class="heading">Estimate shipping and tax</h5>
-                <p>Enter your destination to get a shipping estimate</p>
-                <div class="form-group">
-                  <label for="country">Country*</label>
-                  <select class="selectpicker countrySelect">
-                    <option value="bd">Bangladesh</option>
-                    <option value="us">United States</option>
-                    <option value="uk">United Kingdom</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="country">State/Province</label>
-                  <select class="selectpicker countrySelect">
-                    <option value="">Please select region, state or province</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Chittagong">Chittagong</option>
-                    <option value="Sylhet">Sylhet</option>
-                    <option value="Barishal">Barishal</option>
-                    <option value="Rajshahi">Rajshahi</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="country">Zip/Postal Code</label>
-                  <input type="text" class="form-control">
-                </div>
-                <input type="submit" class="btn btn-default btn-sm" value="get a code">
-              </form>
-            </div>
-            <div class="col-sm-4">
-              <div class="row m0 totalCheckout">
-                <div class="descList row m0">
-                  <dl class="dl-horizontal">
-                    <dt>Subtotal</dt>
-                    <dd>$1260</dd>
-                    <dt class="gt">Grand Total</dt>
-                    <dd>$1260</dd>
-                  </dl>
-                </div>
-                <a href="#" class="btn btn-default btn-sm">Proceed to Checkout</a>
-                <a href="#" class="link">Checkout with multiple addresses</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
-
   </div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 export default {
+  computed: {
+    ...mapState(['cart'])
+  },
+  methods: {
+    // 购物车减
+    cartMinus(product) {
+      const { count, id } = product;
+      const index = this.cart.findIndex(x => x.id === id)
+      if (count > 1) {
+        this.cart[index].count = this.cart[index].count - 1;
+      }
+      this.set({ cart: this.cart })
+    },
+    // 购物车加
+    cartPlus(product) {
+      const { name, sale_price: price, id, img_list, count } = product;
+      const index = this.cart.findIndex(x => x.id === id)
+      this.cart[index].count = count + 1;
+      this.set({ cart: this.cart })
+    },
+    // 购物车删除
+    cartDelete(product) {
+      const { _id: id } = product;
+      const index = this.cart.findIndex(x => x.id === id)
+      this.cart.splice(index, 1)
+      this.set({ cart: this.cart })
+    }
+  },
+  mounted() {
 
-
+  }
 }
 </script>
 
@@ -389,6 +350,10 @@ export default {
 
   input {
     margin: 0px 3px;
+  }
+
+  .fa {
+    color: #9e9e9e;
   }
 }
 </style>

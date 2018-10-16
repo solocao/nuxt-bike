@@ -4,25 +4,33 @@
       <div class="container">
         <div class="row">
           <ul class="nav nav-pills fleft">
-            <li>
+            <li class="header-wce">
               <a href="/">首页</a>
             </li>
-            <li>
+            <li class="header-wce">
               <a href="about.html">关于我们</a>
             </li>
-            <li>
+            <li class="header-wce">
               <a href="contact.html">联系我们</a>
             </li>
           </ul>
           <ul class="nav nav-pills fright">
-            <li>
-              <a href="cart.html">购物车</a>
+            <li class="header-wce">
+              <div v-if="login">
+                <Poptip trigger="hover" placement="bottom">
+                  <nuxt-link class="error-link" to="/user">{{user.name}}</nuxt-link>
+                  <div slot="content" class="person-eqd">
+                    <Button type="text" @click="logout">退出登录</Button>
+                  </div>
+                </Poptip>
+              </div>
+              <nuxt-link v-else class="error-link" to="/user/login">登录</nuxt-link>
             </li>
-            <li>
+            <li class="header-wce">
+              <a href="/shop/cart">购物车</a>
+            </li>
+            <li class="header-wce">
               <a href="#">订单</a>
-            </li>
-            <li>
-              <nuxt-link class="error-link" to="/user">个人中心</nuxt-link>
             </li>
           </ul>
         </div>
@@ -68,13 +76,6 @@
                 </li>
               </ul>
             </div>
-            <div class="fleft cartCount">
-              <nuxt-link class="error-link" to="/shop/cart">
-                <div class="cartCountInner row m0">
-                  <span class="badge">2</span>
-                </div>
-              </nuxt-link>
-            </div>
           </div>
         </div>
       </div>
@@ -88,8 +89,6 @@
               <i class="fa fa-bars"></i> Navigation
             </button>
           </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
 
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="nav navbar-nav a-nav">
@@ -143,6 +142,9 @@
 import NavSwiper from './NavSwiper.vue'
 import ShopHeader from './ShopHeader.vue'
 import UserHoverCard from './UserHoverCard.vue'
+import { mapState, mapMutations } from 'vuex';
+
+
 export default {
   data() {
     return {
@@ -158,16 +160,20 @@ export default {
   },
 
   methods: {
-
+    ...mapMutations({
+      logout: 'logout'
+    }),
   },
   computed: {
+    ...mapState(['login', 'user']),
     // activeMenu() {
     //   // return this.$router.match(location).name;
     //   return 'asf'
     // },
     cartTotal() {
       return this.$store.state.cartTotal;
-    }
+    },
+
   },
   mounted() {
     console.log('看看这个route');
@@ -285,5 +291,18 @@ export default {
 
 #header {
   margin-bottom: 20px;
+}
+
+.header-wce {
+  height: 20px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.person-eqd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

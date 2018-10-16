@@ -106,11 +106,7 @@ export default {
       }
     },
     addCart() {
-      console.log('看看结果123');
-      console.log(this.product);
-
       const { name, sale_price: price, _id: id, img_list } = this.product;
-
       const index = this.cart.findIndex(x => x.id === id)
       if (index === -1) {
         this.cart.push({

@@ -16,9 +16,9 @@ export default {
   data() {
     return {
       banners: [
-        'https://www.aimatech.com/r/front/images/index/201805292.jpg',
-        'https://www.aimatech.com/r/front/images/index/201805294.jpg',
-        'https://www.aimatech.com/r/front/images/index/20180704.jpg'
+        'http://aaebike.oss-cn-hangzhou.aliyuncs.com/banner/15264411491023cqqmr.jpg',
+        'http://aaebike.oss-cn-hangzhou.aliyuncs.com/banner/5bac8fa894bcf.jpg',
+        'http://aaebike.oss-cn-hangzhou.aliyuncs.com/banner/20180706082723_8693.jpg'
       ],
       swiperOption: {
         loop: true,
