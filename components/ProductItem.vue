@@ -2,7 +2,7 @@
   <div :class="col===3?'product-item-3':'product-item-4'">
     <div class="product-item">
       <div class="product-thumb clearfix">
-        <a href="#" class="product-thumb">
+        <a :href="'/bike/'+product._id" class="product-thumb">
           <img :src="product.img_list[0].url" alt="image">
         </a>
         <span class="tag new sale">在售</span>

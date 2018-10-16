@@ -54,7 +54,7 @@
     <div v-html="product.content">
       {{product.content}}
     </div>
-    <div>z asfafas
+    <div>
     </div>
     <div v-html="product.content">
       {{product.content}}
@@ -105,21 +105,26 @@ export default {
         this.num = this.num - 1;
       }
     },
-    addCart() {
-      const { name, sale_price: price, _id: id, img_list } = this.product;
-      const index = this.cart.findIndex(x => x.id === id)
-      if (index === -1) {
-        this.cart.push({
-          id: id,
-          name: name,
-          price: price,
-          img: img_list[0].url,
-          count: this.num
+    async addCart() {
+      const result = await this.post({
+        url: 'user/cart/add',
+        payload: {
+          product_id: this.product._id
+        },
+        auth: true
+      })
+      if (result.code === 1) {
+        const cart = result.data.map(x => {
+          return {
+            id: x._id,
+            name: x.product.name,
+            price: x.product.sale_price,
+            img: x.product.img_list[0].url,
+            count: x.count
+          }
         })
-      } else {
-        this.cart[index].count = this.cart[index].count + this.num;
+        this.set({ cart: cart })
       }
-      this.set({ cart: this.cart })
     },
 
     // async getProductDetail(id) {
