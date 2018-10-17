@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-
     </div>
     <section class="row contentRowPad">
       <div class="container">
@@ -21,7 +20,9 @@
               </thead>
               <tbody>
                 <tr class="alert" v-for="product in cart" :key="product.id">
-                  <td class="productImage"><img :src="product.img" alt=""></td>
+                  <td class="productImage">
+                    <img :src="product.img" alt="">
+                  </td>
                   <td class="productName">
                     <h6 class="heading">{{product.name}}</h6>
                   </td>
@@ -50,7 +51,7 @@
                 <tr>
                   <td colspan="7">
                     <a href="#" class="btn btn-primary btn-lg">继续购物</a>
-                    <a href="#" class="btn btn-default btn-lg fright">更新购物车</a>
+                    <a href="#" class="btn btn-default btn-lg fright" @click="cartList">更新购物车</a>
                     <a href="#" class="btn btn-default btn-lg fright">清空购物车</a>
                   </td>
                 </tr>
@@ -69,6 +70,9 @@ export default {
     ...mapState(['cart'])
   },
   methods: {
+    ...mapMutations({
+      set: 'set'
+    }),
     // 购物车减
     cartMinus(product) {
       const { count, id } = product;
@@ -91,10 +95,33 @@ export default {
       const index = this.cart.findIndex(x => x.id === id)
       this.cart.splice(index, 1)
       this.set({ cart: this.cart })
+    },
+    async  cartList() {
+      const params = {
+        url: 'user/cart/list',
+        payload: {},
+        auth: true
+      }
+      const result = await this.get(params)
+      if (result.code === 1) {
+        const cart = result.data.map(x => {
+          return {
+            id: x._id,
+            name: x.product.name,
+            price: x.product.sale_price,
+            img: x.product.img_list[0].url,
+            count: x.count
+          }
+        })
+        this.set({ cart: cart })
+      }
     }
   },
   mounted() {
 
+  },
+  created() {
+    this.cartList();
   }
 }
 </script>
