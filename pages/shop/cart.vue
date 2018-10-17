@@ -30,11 +30,11 @@
                     ¥{{product.price}}</td>
                   <td>
                     <div class="input-group spinner a-inline-num">
-                      <button class="btn btn-default" @click="cartMinus(product)">
+                      <button class="btn btn-default" @click="cartItemMinus(product.id)">
                         <i class="fa fa-minus"></i>
                       </button>
                       <input type="text" class="form-control" :value="product.count">
-                      <button class="btn btn-default" @click="cartPlus(product)">
+                      <button class="btn btn-default" @click="cartItemAdd(product.id)">
                         <i class="fa fa-plus"></i>
                       </button>
                     </div>
@@ -52,7 +52,7 @@
                   <td colspan="7">
                     <a href="#" class="btn btn-primary btn-lg">继续购物</a>
                     <a href="#" class="btn btn-default btn-lg fright" @click="cartList">更新购物车</a>
-                    <a href="#" class="btn btn-default btn-lg fright">清空购物车</a>
+                    <a href="#" class="btn btn-default btn-lg fright" @click="cartClear">清空购物车</a>
                   </td>
                 </tr>
               </tfoot>
@@ -73,6 +73,18 @@ export default {
     ...mapMutations({
       set: 'set'
     }),
+    setCart(data) {
+      const cart = data.map(x => {
+        return {
+          id: x._id,
+          name: x.product.name,
+          price: x.product.sale_price,
+          img: x.product.img_list[0].url,
+          count: x.count
+        }
+      })
+      this.set({ cart: cart })
+    },
     // 购物车减
     cartMinus(product) {
       const { count, id } = product;
@@ -96,6 +108,19 @@ export default {
       this.cart.splice(index, 1)
       this.set({ cart: this.cart })
     },
+    // 购物车清空
+    async  cartClear() {
+      const params = {
+        url: 'user/cart/clear',
+        payload: {},
+        auth: true
+      }
+      const result = await this.post(params)
+      if (result.code === 1) {
+        this.setCart(result.data)
+      }
+    },
+    // 购物车列表
     async  cartList() {
       const params = {
         url: 'user/cart/list',
@@ -103,6 +128,52 @@ export default {
         auth: true
       }
       const result = await this.get(params)
+      if (result.code === 1) {
+        const cart = result.data.map(x => {
+          return {
+            id: x._id,
+            name: x.product.name,
+            price: x.product.sale_price,
+            img: x.product.img_list[0].url,
+            count: x.count
+          }
+        })
+        this.set({ cart: cart })
+      }
+    },
+    // 购物车商品减一
+    async  cartItemMinus(product_id) {
+      const params = {
+        url: 'user/cart/item/minus',
+        payload: {
+          product_id
+        },
+        auth: true
+      }
+      const result = await this.post(params)
+      if (result.code === 1) {
+        const cart = result.data.map(x => {
+          return {
+            id: x._id,
+            name: x.product.name,
+            price: x.product.sale_price,
+            img: x.product.img_list[0].url,
+            count: x.count
+          }
+        })
+        this.set({ cart: cart })
+      }
+    },
+    // 购物车商品加一
+    async  cartItemAdd(product_id) {
+      const params = {
+        url: 'user/cart/item/add',
+        payload: {
+          product_id
+        },
+        auth: true
+      }
+      const result = await this.post(params)
       if (result.code === 1) {
         const cart = result.data.map(x => {
           return {

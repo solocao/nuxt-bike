@@ -1,4 +1,5 @@
 import Vuex from 'vuex';
+import { post } from '@/plugins/axios.js'
 const createStore = () => {
   return new Vuex.Store({
     state: {
@@ -10,20 +11,13 @@ const createStore = () => {
       },
       cartTotal: 0,
       cart: [
-        {
-          id: '13124214',
-          name: 'Khaki Suede Polish Work Boots',
-          price: 149.99,
-          count: 1,
-          img: 'http://www.aaebike.com:9090/data/img/2ada81_1513910170835.jpg'
-        },
-        {
-          id: '34312',
-          name: 'Khaki Suede Polish Work Boots',
-          price: 149.99,
-          count: 1,
-          img: 'http://www.aaebike.com:9090/data/img/2ada81_1513910170835.jpg'
-        }
+        // {
+        //   id: '13124214',
+        //   name: 'Khaki Suede Polish Work Boots',
+        //   price: 149.99,
+        //   count: 1,
+        //   img: 'http://www.aaebike.com:9090/data/img/2ada81_1513910170835.jpg'
+        // },
       ],
       sale: false,
       // 喜欢的商品
@@ -150,7 +144,6 @@ const createStore = () => {
         state.cart = {};
       },
       addItem: (state, item) => {
-        console.log(item)
         const { id, name, sale_price, img_list } = item
         const index = state.cart.findIndex(x => x.id === id)
         if (index > -1) {
@@ -180,6 +173,11 @@ const createStore = () => {
       },
       logout: (state) => {
         state.login = false;
+      },
+    },
+    actions: {
+      cartItemAdd: (state, item) => {
+
       },
     }
   });
