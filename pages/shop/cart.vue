@@ -6,6 +6,9 @@
       <div class="container">
         <div class="row cartPage">
           <h3 class="heading pageHeading">购物车</h3>
+          <div>
+            {{cart}}
+          </div>
           <div class="table-responsive cartTable row m0">
             <table class="table">
               <thead>
@@ -76,14 +79,15 @@ export default {
     setCart(data) {
       const cart = data.map(x => {
         return {
-          id: x._id,
+          id: x.product._id,
           name: x.product.name,
           price: x.product.sale_price,
           img: x.product.img_list[0].url,
           count: x.count
         }
       })
-      this.set({ cart: cart })
+      console.log(cart)
+      // this.set({ cart: cart })
     },
     // 购物车减
     cartMinus(product) {
@@ -129,16 +133,7 @@ export default {
       }
       const result = await this.get(params)
       if (result.code === 1) {
-        const cart = result.data.map(x => {
-          return {
-            id: x._id,
-            name: x.product.name,
-            price: x.product.sale_price,
-            img: x.product.img_list[0].url,
-            count: x.count
-          }
-        })
-        this.set({ cart: cart })
+        this.setCart(result.data)
       }
     },
     // 购物车商品减一
@@ -164,7 +159,7 @@ export default {
         this.set({ cart: cart })
       }
     },
-    // 购物车商品加一
+    // 购物车 商品 加一
     async  cartItemAdd(product_id) {
       const params = {
         url: 'user/cart/item/add',
@@ -175,16 +170,7 @@ export default {
       }
       const result = await this.post(params)
       if (result.code === 1) {
-        const cart = result.data.map(x => {
-          return {
-            id: x._id,
-            name: x.product.name,
-            price: x.product.sale_price,
-            img: x.product.img_list[0].url,
-            count: x.count
-          }
-        })
-        this.set({ cart: cart })
+        this.setCart(result.data)
       }
     }
   },

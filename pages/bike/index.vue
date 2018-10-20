@@ -143,7 +143,6 @@ export default {
       }
       const result = await this.post(params);
       const brand = [{ name: '全部' }]
-
       if (result.code === 1) {
         this.brands = brand.concat(result.data);
       }

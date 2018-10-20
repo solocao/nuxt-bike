@@ -1,6 +1,7 @@
 <!--商品详情-->
 <template>
   <div class="store-content container">
+
     <div class="gray-box">
       <div class="gallery-wrapper">
         <div class="gallery">
@@ -107,102 +108,30 @@ export default {
     },
     async addCart() {
       const result = await this.post({
-        url: 'user/cart/add',
+        url: 'user/cart/item/add',
         payload: {
           product_id: this.product._id
         },
         auth: true
       })
       if (result.code === 1) {
+        console.log('看看结果')
+        console.log(result.data)
         const cart = result.data.map(x => {
+          console.log(x.product)
+          alert(x.product._id)
           return {
-            id: x._id,
+            id: x.product._id,
             name: x.product.name,
             price: x.product.sale_price,
             img: x.product.img_list[0].url,
             count: x.count
           }
         })
+        console.log(cart)
         this.set({ cart: cart })
       }
-    },
-
-    // async getProductDetail(id) {
-    //   const result = await productDetail(id);
-    //   if (result.success) {
-    //     this.small = result.data.imgUrlList.map(x => this.full(x));
-    //     this.big = this.full(result.data.imgUrlList[0]);
-    //     const product = result.data;
-    //     this.productMsg = product.description;
-    //     this.product = {
-    //       productId: product.id,
-    //       productName: product.name,
-    //       salePrice: product.salePrice,
-    //       sub_title: product.brandName,
-    //       productImageBig: this.big
-    //     };
-    //   }
-    // },
-    // _productDet(productId) {
-    //   productDet({ params: { productId } }).then(res => {
-    //     let result = res.result;
-    //     this.product = result;
-    //     this.productMsg = result.productMsg || '';
-    //     this.small = result.productImageSmall;
-    //     this.big = this.small[0];
-    //   });
-    // },
-    // addCart(id, price, name, img) {
-    //   if (!this.showMoveImg) {
-    //     // 动画是否在运动
-    //     if (this.login) {
-    //       // 登录了 直接存在用户名下
-    //       addCart({ productId: id, productNum: this.productNum }).then(res => {
-    //         // 并不重新请求数据
-    //         this.ADD_CART({
-    //           productId: id,
-    //           productPrice: price,
-    //           productName: name,
-    //           productImg: img,
-    //           productNum: this.productNum
-    //         });
-    //       });
-    //     } else {
-    //       // 未登录 vuex
-    //       this.ADD_CART({
-    //         productId: id,
-    //         productPrice: price,
-    //         productName: name,
-    //         productImg: img,
-    //         productNum: this.productNum
-    //       });
-    //     }
-    //     // 加入购物车动画
-    //     var dom = event.target;
-    //     // 获取点击的坐标
-    //     let elLeft = dom.getBoundingClientRect().left + dom.offsetWidth / 2;
-    //     let elTop = dom.getBoundingClientRect().top + dom.offsetHeight / 2;
-    //     // 需要触发
-    //     this.ADD_ANIMATION({
-    //       moveShow: true,
-    //       elLeft: elLeft,
-    //       elTop: elTop,
-    //       img: img
-    //     });
-    //     if (!this.showCart) {
-    //       this.SHOW_CART({ showCart: true });
-    //     }
-    //   }
-    // },
-    // checkout(productId) {
-    //   this.$router.push({
-    //     path: '/checkout',
-    //     query: { productId, num: this.productNum }
-    //   });
-    // },
-    // editNum(num) {
-    //   this.productNum = num;
-    // }
+    }
   },
 
   created() {

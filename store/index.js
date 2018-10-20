@@ -1,5 +1,4 @@
 import Vuex from 'vuex';
-import { post } from '@/plugins/axios.js'
 const createStore = () => {
   return new Vuex.Store({
     state: {
@@ -11,13 +10,7 @@ const createStore = () => {
       },
       cartTotal: 0,
       cart: [
-        // {
-        //   id: '13124214',
-        //   name: 'Khaki Suede Polish Work Boots',
-        //   price: 149.99,
-        //   count: 1,
-        //   img: 'http://www.aaebike.com:9090/data/img/2ada81_1513910170835.jpg'
-        // },
+
       ],
       sale: false,
       // 喜欢的商品
