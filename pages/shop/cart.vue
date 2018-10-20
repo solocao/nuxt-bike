@@ -86,8 +86,7 @@ export default {
           count: x.count
         }
       })
-      console.log(cart)
-      // this.set({ cart: cart })
+      this.set({ cart: cart })
     },
     // 购物车减
     cartMinus(product) {
@@ -147,16 +146,7 @@ export default {
       }
       const result = await this.post(params)
       if (result.code === 1) {
-        const cart = result.data.map(x => {
-          return {
-            id: x._id,
-            name: x.product.name,
-            price: x.product.sale_price,
-            img: x.product.img_list[0].url,
-            count: x.count
-          }
-        })
-        this.set({ cart: cart })
+        this.setCart(result.data)
       }
     },
     // 购物车 商品 加一
